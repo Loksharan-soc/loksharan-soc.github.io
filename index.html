@@ -1,42 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loksharan SOC Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loksharan Saravanan — Cybersecurity Portfolio</title>
+
+  <!--  replace or remove the font link if you prefer a local font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Modern cyber portfolio: SOC-style dashboard, threat-hunting projects, and software development work — by Loksharan Saravanan." />
 </head>
 <body>
-    <header>
-        <h1>🛡️ Loksharan's SOC Portfolio</h1>
-        <p>Cybersecurity | Software Development | Projects</p>
-    </header>
+  <!-- ====== NAV ====== -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <div class="brand">
+        <span class="logo-dot"></span>
+        <span class="brand-text">loksharan</span>
+        <small class="brand-sub">• cyber + dev</small>
+      </div>
 
-    <section class="dashboard">
-        <div class="card">
-            <h2>Wazuh Alerts</h2>
-            <canvas id="wazuhChart"></canvas>
-        </div>
-        <div class="card">
-            <h2>Skills Radar</h2>
-            <canvas id="skillsChart"></canvas>
-        </div>
-    </section>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
 
-    <section class="projects">
-        <h2>🚀 Featured Projects</h2>
-        <ul>
-            <li><strong>Wazuh Detection Lab</strong> – Simulated brute-force & malicious PowerShell detection.</li>
-            <li><strong>Velociraptor Threat Hunt</strong> – File drop & privilege escalation investigation.</li>
-            <li><strong>Encrypted Chat App (C + OpenSSL)</strong> – Secure GUI messaging with Diffie-Hellman.</li>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- ====== HERO / HOME ====== -->
+  <main id="home" class="container hero">
+    <div class="hero-left">
+      <h1 class="hero-title">Hi — I'm <span class="accent">Loksharan</span></h1>
+      <p class="hero-sub">
+        MS Cybersecurity student • SOC-focused threat hunter • Software developer.
+        Building detection labs, EDR hunts, and secure apps.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn-primary" href="#projects">View Projects</a>
+        <a class="btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-value">3+</div>
+          <div class="metric-label">Major Projects</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">Wazuh</div>
+          <div class="metric-label">SIEM</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">Velociraptor</div>
+          <div class="metric-label">EDR</div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="card profile-card">
+        <img src="assets/avatar.jpg" alt="Loksharan Saravanan" class="avatar" />
+        <h3>Loksharan Saravanan</h3>
+        <p class="muted">MS Cybersecurity — The City College of New York (2026)</p>
+
+        <div class="badge-row">
+          <span class="badge">SOC</span>
+          <span class="badge">EDR</span>
+          <span class="badge">Dev</span>
+        </div>
+
+        <div class="quick-links">
+          <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:loksharan.soc@gmail.com">Email</a>
+        </div>
+      </div>
+
+      <div class="card mini-panel">
+        <h4>Recent Alert</h4>
+        <div class="alert-row">
+          <span class="alert-sev high">HIGH</span>
+          <div class="alert-body">
+            <div class="alert-title">Brute-Force Simulation</div>
+            <div class="alert-sub">Wazuh Detection Lab — failed logins spike</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ====== ABOUT ====== -->
+  <section id="about" class="container section about">
+    <h2>About</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I build detection labs and threat-hunting toolchains that map to real-world techniques.
+          I enjoy turning labs into documented repos with clear detection logic, screenshots, and MITRE ATT&CK mappings.
+          Currently focused on Wazuh, Velociraptor, and EDR detection engineering.
+        </p>
+
+        <ul class="about-list">
+          <li><strong>Education:</strong> MS Cybersecurity — The City College of New York (expected 2026)</li>
+          <li><strong>Experience:</strong> Power Programmer at Infosys (2022)</li>
+          <li><strong>Goal:</strong> SOC/Threat Hunting internship → entry-level security analyst roles</li>
         </ul>
-    </section>
+      </div>
 
-    <footer>
-        <p>© 2025 Loksharan | <a href="https://github.com/loksharan-soc">GitHub</a> | <a href="https://linkedin.com/in/loksharan">LinkedIn</a></p>
-    </footer>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-value">Wazuh</div>
+          <div class="stat-label">SIEM & detections</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Velociraptor</div>
+          <div class="stat-label">EDR hunts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">C / Python</div>
+          <div class="stat-label">Secure dev</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ====== SKILLS ====== -->
+  <section id="skills" class="container section skills">
+    <h2>Skills & Tools</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Security Tooling</h4>
+        <p>Wazuh · Velociraptor · Splunk · Snort · pfSense</p>
+      </div>
+
+      <div class="skill-card">
+        <h4>Development</h4>
+        <p>Python · C · C++ · Flask · Git</p>
+      </div>
+
+      <div class="skill-card">
+        <h4>Infra & OS</h4>
+        <p>Windows · Ubuntu · Kali · VirtualBox · VMware</p>
+      </div>
+
+      <div class="skill-card">
+        <h4>Frameworks & Standards</h4>
+        <p>MITRE ATT&CK · YARA · ELF/PE analysis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+  <section id="projects" class="container section projects">
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Wazuh Detection Lab</h3>
+          <span class="pill">SIEM</span>
+        </div>
+        <p>End-to-end Wazuh lab: Ubuntu server + Windows agent. Simulated brute-force and PowerShell malware; designed alerts and rules.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/wazuh-detection-lab" target="_blank" rel="noopener">Repo</a>
+          <a href="#" class="demo">Screenshots</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Velociraptor Threat Hunt</h3>
+          <span class="pill">EDR</span>
+        </div>
+        <p>Velociraptor server + Windows agent. Wrote hunts & YARA rules to find suspicious file drops and persistence artifacts.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/velociraptor-edr-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Encrypted Chat App</h3>
+          <span class="pill">Dev</span>
+        </div>
+        <p>GTK + OpenSSL implementation of an encrypted chat with Diffie-Hellman key exchange for secure messaging.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/encrypted-chat-app" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact" class="container section contact">
+    <h2>Contact</h2>
+    <p>If you'd like to connect — email me or view my GitHub and LinkedIn.</p>
+
+    <div class="contact-row">
+      <a class="contact-card" href="mailto:loksharan.soc@gmail.com">Email</a>
+      <a class="contact-card" href="https://github.com/loksharan-soc" target="_blank" rel="noopener">GitHub</a>
+      <a class="contact-card" href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 Loksharan Saravanan • Built with HTML, CSS & JS • <a href="assets/resume.pdf">Resume</a></small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

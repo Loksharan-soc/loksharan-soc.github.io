@@ -1,27 +1,25 @@
-// Wazuh Alerts (Example data)
-new Chart(document.getElementById('wazuhChart'), {
-    type: 'bar',
-    data: {
-        labels: ['Failed Logins', 'Malware Detected', 'File Changes'],
-        datasets: [{
-            label: 'Alerts',
-            data: [12, 5, 8],
-            backgroundColor: ['#f87171', '#fbbf24', '#34d399']
-        }]
-    }
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
 });
 
-// Skills Radar
-new Chart(document.getElementById('skillsChart'), {
-    type: 'radar',
-    data: {
-        labels: ['Python', 'C', 'Wazuh', 'Velociraptor', 'Splunk', 'Networking'],
-        datasets: [{
-            label: 'Skill Level',
-            data: [8, 7, 9, 8, 6, 7],
-            backgroundColor: 'rgba(56,189,248,0.2)',
-            borderColor: '#38bdf8',
-            pointBackgroundColor: '#38bdf8'
-        }]
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      // Close nav on mobile after click
+      if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
     }
+  });
 });
