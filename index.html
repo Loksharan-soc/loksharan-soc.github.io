@@ -1,223 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Loksharan Saravanan — Cybersecurity Portfolio</title>
-
-  <!--  replace or remove the font link if you prefer a local font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Modern cyber portfolio: SOC-style dashboard, threat-hunting projects, and software development work — by Loksharan Saravanan." />
 </head>
 <body>
-  <!-- ====== NAV ====== -->
+  <!-- Header / Navigation -->
   <header class="nav-wrap">
     <nav class="nav container">
       <div class="brand">
-        <span class="logo-dot"></span>
-        <span class="brand-text">loksharan</span>
-        <small class="brand-sub">• cyber + dev</small>
+        <div class="logo-dot"></div>
+        Loksharan Saravanan
+        <span class="brand-sub">Cybersecurity</span>
       </div>
-
+      <button class="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
       </ul>
-
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     </nav>
   </header>
 
-  <!-- ====== HERO / HOME ====== -->
-  <main id="home" class="container hero">
+  <!-- Hero Section -->
+  <section class="hero container">
     <div class="hero-left">
-      <h1 class="hero-title">Hi — I'm <span class="accent">Loksharan</span></h1>
-      <p class="hero-sub">
-        MS Cybersecurity student • SOC-focused threat hunter • Software developer.
-        Building detection labs, EDR hunts, and secure apps.
-      </p>
-
+      <h1 class="hero-title">Hi, I’m <span class="accent">Loksharan</span></h1>
+      <p class="hero-sub">M.S Cybersecurity student building practical projects and pursuing internships.</p>
       <div class="hero-cta">
-        <a class="btn-primary" href="#projects">View Projects</a>
-        <a class="btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a href="#projects" class="btn-primary btn">View Projects</a>
+        <a href="#contact" class="btn-outline btn">Get In Touch</a>
       </div>
-
       <div class="metrics">
         <div class="metric">
           <div class="metric-value">3+</div>
-          <div class="metric-label">Major Projects</div>
+          <div class="metric-label">Projects</div>
         </div>
         <div class="metric">
-          <div class="metric-value">Wazuh</div>
-          <div class="metric-label">SIEM</div>
+          <div class="metric-value">2</div>
+          <div class="metric-label">Internships</div>
         </div>
         <div class="metric">
-          <div class="metric-value">Velociraptor</div>
-          <div class="metric-label">EDR</div>
+          <div class="metric-value">2026</div>
+          <div class="metric-label">Graduation</div>
         </div>
       </div>
     </div>
-
-    <aside class="hero-right">
+    <div class="hero-right">
       <div class="card profile-card">
-        <img src="assets/avatar.jpg" alt="Loksharan Saravanan" class="avatar" />
+        <img src="avatar.jpg" alt="Loksharan Saravanan" class="avatar" />
         <h3>Loksharan Saravanan</h3>
-        <p class="muted">MS Cybersecurity — The City College of New York (2026)</p>
-
+        <p class="muted">MS Cybersecurity | Aspiring SOC Analyst</p>
         <div class="badge-row">
-          <span class="badge">SOC</span>
-          <span class="badge">EDR</span>
-          <span class="badge">Dev</span>
+          <div class="badge">Wazuh</div>
+          <div class="badge">Velociraptor</div>
+          <div class="badge">Python</div>
         </div>
-
         <div class="quick-links">
-          <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:loksharan.soc@gmail.com">Email</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card mini-panel">
-        <h4>Recent Alert</h4>
-        <div class="alert-row">
-          <span class="alert-sev high">HIGH</span>
-          <div class="alert-body">
-            <div class="alert-title">Brute-Force Simulation</div>
-            <div class="alert-sub">Wazuh Detection Lab — failed logins spike</div>
-          </div>
-        </div>
-      </div>
-    </aside>
-  </main>
-
-  <!-- ====== ABOUT ====== -->
-  <section id="about" class="container section about">
-    <h2>About</h2>
+  <!-- About Section -->
+  <section id="about" class="section container">
+    <h2>About Me</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I build detection labs and threat-hunting toolchains that map to real-world techniques.
-          I enjoy turning labs into documented repos with clear detection logic, screenshots, and MITRE ATT&CK mappings.
-          Currently focused on Wazuh, Velociraptor, and EDR detection engineering.
+          I am a graduate student pursuing MS in Cybersecurity at The City College of New York. 
+          Passionate about building hands-on projects in security monitoring, threat hunting, and EDR tools.
         </p>
-
         <ul class="about-list">
-          <li><strong>Education:</strong> MS Cybersecurity — The City College of New York (expected 2026)</li>
-          <li><strong>Experience:</strong> Power Programmer at Infosys (2022)</li>
-          <li><strong>Goal:</strong> SOC/Threat Hunting internship → entry-level security analyst roles</li>
+          <li>B.E. Computer Science & Engineering (2021)</li>
+          <li>Experience with Wazuh, Velociraptor, and Splunk</li>
+          <li>Preparing for CompTIA Security+</li>
         </ul>
       </div>
-
       <div class="about-stats">
         <div class="stat">
-          <div class="stat-value">Wazuh</div>
-          <div class="stat-label">SIEM & detections</div>
+          <div class="stat-value">2</div>
+          <div class="stat-label">Internships</div>
         </div>
         <div class="stat">
-          <div class="stat-value">Velociraptor</div>
-          <div class="stat-label">EDR hunts</div>
+          <div class="stat-value">3+</div>
+          <div class="stat-label">Projects</div>
         </div>
         <div class="stat">
-          <div class="stat-value">C / Python</div>
-          <div class="stat-label">Secure dev</div>
+          <div class="stat-value">2026</div>
+          <div class="stat-label">Graduation Year</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== SKILLS ====== -->
-  <section id="skills" class="container section skills">
-    <h2>Skills & Tools</h2>
-
+  <!-- Skills Section -->
+  <section id="skills" class="section container">
+    <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <h4>Security Tooling</h4>
-        <p>Wazuh · Velociraptor · Splunk · Snort · pfSense</p>
+        <h4>Programming</h4>
+        <p>C, C++, Python, SQL</p>
       </div>
-
       <div class="skill-card">
-        <h4>Development</h4>
-        <p>Python · C · C++ · Flask · Git</p>
+        <h4>Tools</h4>
+        <p>Wazuh, Velociraptor, Splunk, Snort</p>
       </div>
-
       <div class="skill-card">
-        <h4>Infra & OS</h4>
-        <p>Windows · Ubuntu · Kali · VirtualBox · VMware</p>
-      </div>
-
-      <div class="skill-card">
-        <h4>Frameworks & Standards</h4>
-        <p>MITRE ATT&CK · YARA · ELF/PE analysis</p>
+        <h4>Operating Systems</h4>
+        <p>Windows, Ubuntu, Kali Linux</p>
       </div>
     </div>
   </section>
 
-  <!-- ====== PROJECTS ====== -->
-  <section id="projects" class="container section projects">
-    <h2>Featured Projects</h2>
-
+  <!-- Projects Section -->
+  <section id="projects" class="section container">
+    <h2>Projects</h2>
     <div class="project-grid">
-      <article class="project-card">
+      <div class="project-card">
         <div class="project-header">
           <h3>Wazuh Detection Lab</h3>
-          <span class="pill">SIEM</span>
+          <span class="pill">Wazuh</span>
         </div>
-        <p>End-to-end Wazuh lab: Ubuntu server + Windows agent. Simulated brute-force and PowerShell malware; designed alerts and rules.</p>
+        <p>Built a virtual SOC with Ubuntu and Windows VMs, simulating brute-force and PowerShell attacks.</p>
         <div class="project-links">
-          <a href="https://github.com/loksharan-soc/wazuh-detection-lab" target="_blank" rel="noopener">Repo</a>
-          <a href="#" class="demo">Screenshots</a>
+          <a href="https://github.com/loksharan-soc/wazuh-detection-lab" target="_blank">GitHub</a>
         </div>
-      </article>
-
-      <article class="project-card">
+      </div>
+      <div class="project-card">
         <div class="project-header">
-          <h3>Velociraptor Threat Hunt</h3>
-          <span class="pill">EDR</span>
+          <h3>Velociraptor Threat Hunting</h3>
+          <span class="pill">Velociraptor</span>
         </div>
-        <p>Velociraptor server + Windows agent. Wrote hunts & YARA rules to find suspicious file drops and persistence artifacts.</p>
+        <p>Used Velociraptor EDR to detect suspicious file drops and privilege escalation in Windows VM.</p>
         <div class="project-links">
-          <a href="https://github.com/loksharan-soc/velociraptor-edr-lab" target="_blank" rel="noopener">Repo</a>
+          <a href="https://github.com/loksharan-soc/velociraptor-edr-lab" target="_blank">GitHub</a>
         </div>
-      </article>
-
-      <article class="project-card">
+      </div>
+      <div class="project-card">
         <div class="project-header">
-          <h3>Encrypted Chat App</h3>
-          <span class="pill">Dev</span>
+          <h3>Login Honeypot</h3>
+          <span class="pill">Flask</span>
         </div>
-        <p>GTK + OpenSSL implementation of an encrypted chat with Diffie-Hellman key exchange for secure messaging.</p>
+        <p>Developed a web app to log attacker credentials and IPs, simulating brute-force attacks.</p>
         <div class="project-links">
-          <a href="https://github.com/loksharan-soc/encrypted-chat-app" target="_blank" rel="noopener">Repo</a>
+          <a href="https://github.com/loksharan-soc/login-honeypot" target="_blank">GitHub</a>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
-  <!-- ====== CONTACT ====== -->
-  <section id="contact" class="container section contact">
+  <!-- Contact Section -->
+  <section id="contact" class="section container">
     <h2>Contact</h2>
-    <p>If you'd like to connect — email me or view my GitHub and LinkedIn.</p>
-
     <div class="contact-row">
-      <a class="contact-card" href="mailto:loksharan.soc@gmail.com">Email</a>
-      <a class="contact-card" href="https://github.com/loksharan-soc" target="_blank" rel="noopener">GitHub</a>
-      <a class="contact-card" href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="contact-card">
+        <a href="mailto:loksharan.soc@gmail.com">Email Me</a>
+      </div>
+      <div class="contact-card">
+        <a href="tel:+15513591885">Call: 551-359-1885</a>
+      </div>
+      <div class="contact-card">
+        <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <div class="contact-card">
+        <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </div>
   </section>
 
-  <!-- ====== FOOTER ====== -->
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <small>© 2025 Loksharan Saravanan • Built with HTML, CSS & JS • <a href="assets/resume.pdf">Resume</a></small>
-    </div>
+    <p>© 2025 Loksharan Saravanan. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile nav toggle script
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
