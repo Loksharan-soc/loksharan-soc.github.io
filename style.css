@@ -518,126 +518,77 @@ footer.footer {
   margin-top: 40px;
 }
 
-/* Make images, videos, iframes responsive */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Responsive Nav Toggle and Mobile Styles */
+/* Responsive Nav Toggle and Layout */
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Hide nav links initially */
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100% !important;
+    width: 100%;
     background: #071026;
-    margin-top: 12px !important;
-    padding: 12px 0 !important;
+    margin-top: 12px;
+    padding: 12px 0;
     border-radius: 8px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin: 0 !important;
   }
+
+  /* Show nav links when toggled */
   .nav-links.active {
     display: flex;
   }
+
+  /* Nav links styling for mobile */
   .nav-links li {
     margin: 12px 0;
     text-align: center;
   }
+
+  /* Show nav toggle button */
   .nav-toggle {
     display: block;
   }
+
+  /* Prevent nav wrapping */
   nav.nav {
     flex-wrap: nowrap;
   }
 
-  /* Hero Section */
+  /* Stack hero section vertically */
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 20px 10px;
   }
+
   .hero-left,
   .hero-right {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
   }
 
-  /* Metrics Section */
+  /* Center metrics */
   .metrics {
     justify-content: center;
-    flex-wrap: wrap;
-  }
-  .metric {
-    min-width: 100px;
-    flex: 1 1 120px;
-    margin-bottom: 12px;
   }
 
-  /* About Section */
+  /* Stack about section vertically */
   .about-grid {
     flex-direction: column;
-    padding: 0 10px;
   }
+
+  /* About stats in row and centered */
   .about-stats {
     flex-direction: row;
     justify-content: center;
     gap: 14px;
   }
 
-  /* Avatar */
+  /* Responsive avatar */
   .avatar {
     max-width: 120px;
     height: auto;
     margin: 0 auto 16px auto;
     display: block;
   }
-
-  /* Skills and Projects Grids */
-  .skills-grid,
-  .project-grid {
-    grid-template-columns: 1fr !important;
-    padding: 0 10px;
-  }
-
-  /* Contact Section */
-  .contact-row {
-    flex-direction: column;
-    gap: 16px;
-    padding: 0 10px;
-  }
-  .contact-card {
-    width: 100% !important;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  /* Font size adjustments */
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-sub {
-    font-size: 1rem;
-  }
-  .metric-value {
-    font-size: 1.4rem;
-  }
-  .metric-label {
-    font-size: 0.75rem;
-  }
-
-  /* Buttons full width */
-  .btn-primary,
-  .btn-outline,
-  .btn-ghost {
-    width: 100%;
-    max-width: 280px;
-    box-sizing: border-box;
-    padding: 12px 0;
-  }
 }
+``
