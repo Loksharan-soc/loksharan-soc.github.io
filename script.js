@@ -2,8 +2,10 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
+// Toggle mobile nav
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+  navToggle.classList.toggle('open');
 });
 
 // Smooth scroll for nav links
@@ -19,6 +21,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       // Close nav on mobile after click
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
+        navToggle.classList.remove('open');
       }
     }
   });
