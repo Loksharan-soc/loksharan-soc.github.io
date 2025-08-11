@@ -340,7 +340,7 @@ nav.nav {
 }
 
 .about-text {
-  flex: 1 1 480px;
+  flex: 1 1 400px;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -357,7 +357,7 @@ nav.nav {
 }
 
 .about-stats {
-  flex: 1 1 280px;
+  flex: 1 1 100px;
   display: flex;
   flex-direction: column;
   gap: 24px;
