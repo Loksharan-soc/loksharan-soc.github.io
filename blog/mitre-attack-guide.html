@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Understanding the MITRE ATT&CK Framework — Blog by Loksharan Saravanan</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0b111f;
+      color: #cfd8dc;
+      font-family: 'Inter', sans-serif, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a {
+      color: #4dd0e1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #81d4fa;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      color: #2ec4b6;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 0 6px #2ec4b6;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 1.6em;
+      margin-bottom: 0.8em;
+    }
+    p {
+      margin-bottom: 1.2em;
+      font-size: 1.1rem;
+      color: #d0e9f9;
+    }
+    ul {
+      margin-left: 1.4em;
+      margin-bottom: 1.2em;
+    }
+    li {
+      margin-bottom: 0.7em;
+      font-size: 1.05rem;
+    }
+    blockquote {
+      border-left: 4px solid #2ec4b6;
+      padding-left: 1em;
+      margin: 1.5em 0;
+      font-style: italic;
+      color: #81d4fa;
+      background: #071026;
+      border-radius: 6px;
+      box-shadow: 0 0 14px #0288d1;
+    }
+    code {
+      background-color: #071026;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      color: #81d4fa;
+    }
+    pre {
+      background-color: #071026;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      box-shadow: 0 0 14px #0288d1;
+      margin-bottom: 1.5em;
+    }
+    /* Back link */
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2em;
+      font-weight: 600;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 4em;
+      font-size: 0.9rem;
+      color: #557a8a;
+      border-top: 1px solid #2ec4b6;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p, li {
+        font-size: 1rem;
+      }
+    }
+    
+       .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* space between icons */
+    margin-top: 20px;
+  }
+
+  .contact-icon {
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .contact-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px #2ec4b6);
+  }
+  </style>
+</head>
+<body>
+  <a href="../index.html" class="back-link">← Back to Portfolio</a>
+
+  <h1>Understanding the MITRE ATT&CK Framework: A Guide for Aspiring SOC Analysts</h1>
+  <p><em>Published: June 2025 | By Loksharan Saravanan</em></p>
+
+  <p>The MITRE ATT&CK Framework has become an essential tool for cybersecurity professionals, especially those working in Security Operations Centers (SOC) and threat hunting. In this guide, I’ll explain what the MITRE ATT&CK framework is, why it’s important, and how I’ve applied it in my labs and real-world projects to improve detection and response capabilities.</p>
+
+  <h2>What is the MITRE ATT&CK Framework?</h2>
+  <p>MITRE ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. It helps cybersecurity teams understand how attackers operate and provides a common language for describing their behavior.</p>
+
+  <blockquote>
+    "MITRE ATT&CK provides a matrix of tactics (the goals of an attacker) and techniques (the methods they use) to help defenders identify, detect, and respond to threats more effectively."
+  </blockquote>
+
+  <h2>Why is MITRE ATT&CK Important?</h2>
+  <p>By mapping cyber attacks to specific tactics and techniques in the ATT&CK framework, SOC analysts can:</p>
+  <ul>
+    <li>Understand attacker behavior and anticipate their next moves.</li>
+    <li>Develop better detection rules and alerting mechanisms.</li>
+    <li>Prioritize defensive efforts based on attacker methods used against your environment.</li>
+    <li>Communicate findings clearly with a standardized vocabulary.</li>
+  </ul>
+
+  <h2>Applying MITRE ATT&CK in My Labs</h2>
+  <p>In my Wazuh detection lab and Velociraptor threat hunting projects, I use MITRE ATT&CK to:</p>
+  <ul>
+    <li>Map simulated attacks (e.g., brute force, PowerShell malware) to ATT&CK techniques like <code>T1110 - Brute Force</code> and <code>T1059.001 - PowerShell</code>.</li>
+    <li>Write detection rules that specifically target behaviors outlined in ATT&CK.</li>
+    <li>Document alerts and findings with ATT&CK technique IDs to maintain clarity and professional standards.</li>
+  </ul>
+
+  <h2>Example: Brute Force Attack Detection</h2>
+  <p>When simulating brute force login attempts in my lab, I referenced MITRE ATT&CK technique <code>T1110</code> to understand common attacker methods. This guided me to create Wazuh rules that detect multiple failed login attempts in a short timeframe, improving alert quality and reducing false positives.</p>
+
+  <h2>Getting Started with MITRE ATT&CK</h2>
+  <p>If you’re new to MITRE ATT&CK, I recommend:</p>
+  <ul>
+    <li>Exploring the official ATT&CK website: <a href="https://attack.mitre.org/" target="_blank" rel="noopener">attack.mitre.org</a></li>
+    <li>Starting with the Enterprise Matrix to understand common attacker tactics and techniques.</li>
+    <li>Using ATT&CK IDs when documenting your projects and detections.</li>
+    <li>Integrating ATT&CK mapping into your threat hunting workflows.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Understanding and applying the MITRE ATT&CK framework is a key skill for aspiring SOC analysts and cybersecurity professionals. It improves your ability to detect, analyze, and respond to threats with precision and professionalism.</p>
+  <p>As you build your labs and hands-on projects, make ATT&CK a central part of your methodology — it will set you apart in the job market and in real-world SOC environments.</p>
+
+  
+  
+  
+  
+  
+  
+  
+  <section id="contact" class="container section contact">
+  <h2>Contact Me</h2>
+  <p>If you'd like to connect or learn more about my work, feel free to reach out:</p>
+  <div class="contact-row" style="justify-content: center; gap: 30px;">
+    <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener" aria-label="LinkedIn" class="contact-icon">
+      <!-- LinkedIn SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#2ec4b6" viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.75h5v15H0v-15zm7.25 0h4.8v2.25h.07c.67-1.27 2.3-2.6 4.73-2.6 5.05 0 6 3.33 6 7.65v8.7h-5v-7.7c0-1.84-.04-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06v7.84h-5v-15z"/>
+      </svg>
+    </a>
+    <a href="mailto:loksharan.soc@gmail.com" aria-label="Email" class="contact-icon">
+      <!-- Email SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#2ec4b6" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener" aria-label="GitHub" class="contact-icon">
+      <!-- GitHub SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#2ec4b6" viewBox="0 0 24 24">
+        <path d="M12 .5C5.38.5 0 5.88 0 12.5c0 5.3 3.438 9.8 8.207 11.385.6.11.793-.26.793-.577v-2.16c-3.338.726-4.042-1.61-4.042-1.61-.546-1.39-1.333-1.758-1.333-1.758-1.09-.745.083-.73.083-.73 1.204.084 1.838 1.235 1.838 1.235 1.07 1.834 2.807 1.304 3.492.997.11-.775.418-1.305.76-1.605-2.665-.304-5.466-1.334-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.125-.303-.535-1.523.115-3.176 0 0 1.005-.32 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.55 3.28-1.23 3.28-1.23.655 1.653.245 2.873.12 3.176.77.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.19.69.8.57C20.565 22.3 24 17.8 24 12.5 24 5.88 18.62.5 12 .5z"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+  
+  
+  
+  
+  
+  <footer>
+    &copy; 2025 Loksharan Saravanan • Built with HTML &amp; CSS
+  </footer>
+</body>
+</html>

@@ -693,3 +693,43 @@ body[data-theme='light'] .theme-toggle-wrapper label {
   background-color: #81d4fa;
   color: #0b111f;
 }
+
+
+/* Certificates Section */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.certificate-card {
+  background: #071026;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 0 18px #0288d1;
+  color: #a3c1ce;
+  transition: box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  box-shadow: 0 0 28px #2ec4b6;
+}
+
+.certificate-card h3 {
+  color: #2ec4b6;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.certificate-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #d0e9f9;
+}
+
+.certificate-card p em {
+  font-style: italic;
+  color: #81d4fa;
+}
