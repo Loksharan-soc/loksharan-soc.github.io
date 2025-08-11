@@ -5,55 +5,65 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Loksharan Saravanan — Cybersecurity Portfolio</title>
 
+  <!-- Google font: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- SEO Description -->
   <meta name="description" content="Modern cyber portfolio: SOC-style dashboard, threat-hunting projects, and software development work — by Loksharan Saravanan." />
 </head>
 <body>
+  <!-- Header & Navigation -->
   <header class="nav-wrap">
-    <nav class="nav container">
+    <nav class="nav container" role="navigation" aria-label="Primary Navigation">
+      <!-- Brand / Logo -->
       <div class="brand">
-        <span class="logo-dot"></span>
+        <span class="logo-dot" aria-hidden="true"></span>
         <span class="brand-text">loksharan</span>
         <small class="brand-sub">• cyber + dev</small>
       </div>
 
+      <!-- Navigation links -->
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="#home" tabindex="0">Home</a></li>
+        <li><a href="#about" tabindex="0">About</a></li>
+        <li><a href="#skills" tabindex="0">Skills</a></li>
+        <li><a href="#projects" tabindex="0">Projects</a></li>
+        <li><a href="#blog" tabindex="0">Blog</a></li>
+        <li><a href="#contact" tabindex="0">Contact</a></li>
+        <li><a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener" tabindex="0">Resume</a></li>
       </ul>
 
+      <!-- Theme toggle switch -->
       <div class="theme-toggle-wrapper">
-        <input type="checkbox" id="theme-toggle" />
-        <label for="theme-toggle" aria-label="Toggle dark/light theme">🌙</label>
+        <!-- Hidden checkbox for toggle -->
+        <input type="checkbox" id="theme-toggle" aria-label="Toggle light and dark theme" />
+        <label for="theme-toggle" id="theme-icon" style="cursor:pointer; font-size:1.4rem; user-select:none;">🌙</label>
       </div>
 
+      <!-- Hamburger menu button for mobile nav toggle -->
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     </nav>
   </header>
 
-  <main id="home" class="container hero">
+  <!-- Main Hero Section -->
+  <main id="home" class="container hero" role="main">
     <div class="hero-left">
-      <h1 class="hero-title">Hi — I'm <span class="accent">Loksharan</span></h1>
+      <h1 class="hero-title">Hi, I'm <span class="accent">Loksharan</span></h1>
       <p class="hero-sub">
         MS Cybersecurity student • SOC-focused threat hunter • Software developer.
         Building detection labs, EDR hunts, and secure apps.
       </p>
 
+      <!-- Call-to-action buttons -->
       <div class="hero-cta">
         <a class="btn-primary" href="#projects">View Projects</a>
         <a class="btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
       </div>
 
-      
-      
+      <!-- Metrics info -->
       <div class="metrics">
         <div class="metric">
           <div class="metric-value">3+</div>
@@ -64,66 +74,54 @@
           <div class="metric-label">Tools</div>
         </div>
         <div class="metric">
-          <div class="metric-value"></div>
-          <div class="metric-label"></div>
+          <div class="metric-value">1</div>
+          <div class="metric-label">Publication</div>
         </div>
       </div>
     </div>
 
-    
-    
-    
-    <aside class="hero-right">
+    <!-- Right side profile card -->
+    <aside class="hero-right" aria-label="Profile Card">
       <div class="card profile-card">
         <img src="assets/avatar.jpg" alt="Loksharan Saravanan" class="avatar" />
         <h3>Loksharan Saravanan</h3>
         <p class="muted">MS Cybersecurity — The City College of New York (2026)</p>
 
-        <div class="badge-row">
+        <div class="badge-row" aria-label="Skills badges">
           <span class="badge">SOC</span>
           <span class="badge">EDR</span>
           <span class="badge">Dev</span>
         </div>
 
-        <div class="quick-links">
+        <div class="quick-links" aria-label="Social and contact links">
           <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:loksharan.soc@gmail.com">Email</a>
         </div>
       </div>
-<!--
-      <div class="card mini-panel">
-        <h4>Recent Alert</h4>
-        <div class="alert-row">
-          <span class="alert-sev high">HIGH</span>
-          <div class="alert-body">
-            <div class="alert-title">Brute-Force Simulation</div>
-            <div class="alert-sub">Wazuh Detection Lab — failed logins spike</div>
-          </div>
-          -->
-        </div>
-      </div>
     </aside>
   </main>
 
-  <section id="about" class="container section about">
+  <!-- About Section -->
+  <section id="about" class="container section about" tabindex="0">
     <h2>About</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I build detection labs and threat-hunting toolchains that map to real-world techniques.
-          I enjoy turning labs into documented repos with clear detection logic, screenshots, and MITRE ATT&CK mappings.
-          Currently focused on Wazuh, Velociraptor, and EDR detection engineering.
+          I’m a Cybersecurity graduate student and former Power Programmer at Infosys, specializing in SOC operations, detection engineering, and threat hunting. I design and implement realistic detection labs that simulate adversary behavior using frameworks like MITRE ATT&CK, then transform those simulations into production-ready detection content that strengthens organizational defenses.
+        </p>
+        <p>
+          I’m pursuing my MS in Cybersecurity at The City College of New York (expected 2026) and actively seeking opportunities where I can apply my technical rigor, investigative mindset, and toolchain expertise in a SOC or Threat Hunting internship, with the goal of progressing into an entry-level Security Analyst role.
         </p>
 
         <ul class="about-list">
           <li><strong>Education:</strong> MS Cybersecurity — The City College of New York (expected 2026)</li>
           <li><strong>Experience:</strong> Power Programmer at Infosys (2022)</li>
-          <li><strong>Goal:</strong> SOC/Threat Hunting internship → entry-level security analyst roles</li>
+          <li><strong>Objective:</strong> SOC/Threat Hunting internship → entry-level security analyst roles</li>
         </ul>
       </div>
 
-      <div class="about-stats">
+      <div class="about-stats" aria-label="Key skills stats">
         <div class="stat">
           <div class="stat-value">Wazuh</div>
           <div class="stat-label">SIEM & detections</div>
@@ -140,7 +138,8 @@
     </div>
   </section>
 
-  <section id="skills" class="container section skills">
+  <!-- Skills Section -->
+  <section id="skills" class="container section skills" tabindex="0">
     <h2>Skills & Tools</h2>
 
     <div class="skills-grid">
@@ -166,40 +165,24 @@
     </div>
   </section>
 
-  
-  
-  
-  <!--
-  <section id="certificates" class="container section certificates">
-  <h2>Certificates</h2>
-  <div class="certificates-grid">
-    <article class="certificate-card">
-      <h3>CompTIA Security+</h3>
-      <p><em>Expected Completion: October 2025</em></p>
-      <p>Industry-recognized certification covering core cybersecurity concepts and best practices.</p>
-    </article>
+  <!-- Certificates Section -->
+  <section id="certificates" class="container section certificates" tabindex="0">
+    <h2>Certificates</h2>
+    <div class="certificates-grid">
+      <article class="certificate-card">
+        <h3>CompTIA Security+</h3>
+        <p><em>Expected Completion: October 2025</em></p>
+      </article>
 
-    <article class="certificate-card">
-      <h3>Splunk Core Certified User</h3>
-      <p><em>Completed: June 2025</em></p>
-      <p>Validates ability to search, use fields, and create dashboards with Splunk software.</p>
-    </article>
+      <article class="certificate-card">
+        <h3>Virtual Cybersecurity Career Challenge</h3>
+        <p><em>Completed: May 2025</em></p>
+      </article>
+    </div>
+  </section>
 
-    <article class="certificate-card">
-      <h3>Virtual Cybersecurity Career Challenge</h3>
-      <p><em>Completed: May 2025</em></p>
-      <p>Hands-on virtual challenges in threat detection, incident response, and analysis.</p>
-    </article>
-  </div>
-</section>
-  -->
-
-  
-  
-  
-  
-  
-  <section id="projects" class="container section projects">
+  <!-- Projects Section -->
+  <section id="projects" class="container section projects" tabindex="0">
     <h2>Featured Projects</h2>
     
     <div class="project-grid">
@@ -238,45 +221,34 @@
       </article>
     </div>
   </section>
-  
-  
-  
-  
-  
-  
-  
-  
-<section id="blog" class="container section blog">
-  <h2>Blog</h2>
-  <div class="blog-list">
-    <article class="blog-post">
-       <h3>Top 5 Essential Tools Every Cybersecurity Intern Should Learn in 2025</h3>
-      <small>August 2025</small>
-      <p>Insights on must-know tools like Wazuh, Velociraptor, Splunk, Snort, and pfSense, and hands-on experience with them.</p>
-      <a href="blog/essential-tools-blog.html" class="btn-outline">Read More</a>
-    </article>
-    <article class="blog-post">
-      <h3>Building a Home Cybersecurity Lab: Tools, Tips, and Best Practices</h3>
-      <small>July 2025</small>
-      <p>Learn how to design and build a practical home cybersecurity lab from scratch.</p>
-      <a href="blog/home-lab.html" class="btn-outline">Read More</a>
-    </article>
-    <article class="blog-post">
-       <h3>Understanding the MITRE ATT&CK Framework: A Guide for Aspiring SOC Analysts</h3>
-      <small>June 2025</small>
-      <p>Learn about the MITRE ATT&CK framework, its importance, and how it integrates with cybersecurity labs.</p>
-      <a href="blog/mitre-attack-guide.html" class="btn-outline">Read More</a>
-    </article>
-  </div>
-</section>
-  
-  
-  
-  
-  
-  
-  
-  <section id="contact" class="container section contact">
+
+  <!-- Blog Section -->
+  <section id="blog" class="container section blog" tabindex="0">
+    <h2>Blog</h2>
+    <div class="blog-list">
+      <article class="blog-post">
+         <h3>Top 5 Essential Tools Every Cybersecurity Intern Should Learn in 2025</h3>
+        <small>August 2025</small>
+        <p>Insights on must-know tools like Wazuh, Velociraptor, Splunk, Snort, and pfSense, and hands-on experience with them.</p>
+        <a href="blog/essential-tools-blog.html" class="btn-outline">Read More</a>
+      </article>
+      <article class="blog-post">
+        <h3>Building a Home Cybersecurity Lab: Tools, Tips, and Best Practices</h3>
+        <small>July 2025</small>
+        <p>Learn how to design and build a practical home cybersecurity lab from scratch.</p>
+        <a href="blog/home-lab.html" class="btn-outline">Read More</a>
+      </article>
+      <article class="blog-post">
+         <h3>Understanding the MITRE ATT&CK Framework: A Guide for Aspiring SOC Analysts</h3>
+        <small>June 2025</small>
+        <p>Learn about the MITRE ATT&CK framework, its importance, and how it integrates with cybersecurity labs.</p>
+        <a href="blog/mitre-attack-guide.html" class="btn-outline">Read More</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container section contact" tabindex="0">
     <h2>Contact</h2>
     <p>If you'd like to connect — email me or view my GitHub and LinkedIn.</p>
 
@@ -287,12 +259,14 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <small>© 2025 Loksharan Saravanan • Built with HTML, CSS & JS • <a href="assets/resume.pdf">Resume</a></small>
     </div>
   </footer>
 
+  <!-- Link to external JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
