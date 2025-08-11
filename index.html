@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Loksharan Saravanan — Cybersecurity Portfolio</title>
 
-  <!--  replace or remove the font link if you prefer a local font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="Modern cyber portfolio: SOC-style dashboard, threat-hunting projects, and software development work — by Loksharan Saravanan." />
 </head>
 <body>
-  <!-- ====== NAV ====== -->
   <header class="nav-wrap">
     <nav class="nav container">
       <div class="brand">
@@ -26,15 +24,21 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+
         <li><a href="#contact">Contact</a></li>
         <li><a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
       </ul>
+
+      <div class="theme-toggle-wrapper">
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle" aria-label="Toggle dark/light theme">🌙</label>
+      </div>
 
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     </nav>
   </header>
 
-  <!-- ====== HERO / HOME ====== -->
   <main id="home" class="container hero">
     <div class="hero-left">
       <h1 class="hero-title">Hi — I'm <span class="accent">Loksharan</span></h1>
@@ -96,7 +100,6 @@
     </aside>
   </main>
 
-  <!-- ====== ABOUT ====== -->
   <section id="about" class="container section about">
     <h2>About</h2>
     <div class="about-grid">
@@ -131,7 +134,6 @@
     </div>
   </section>
 
-  <!-- ====== SKILLS ====== -->
   <section id="skills" class="container section skills">
     <h2>Skills & Tools</h2>
 
@@ -158,10 +160,9 @@
     </div>
   </section>
 
-  <!-- ====== PROJECTS ====== -->
   <section id="projects" class="container section projects">
     <h2>Featured Projects</h2>
-
+    
     <div class="project-grid">
       <article class="project-card">
         <div class="project-header">
@@ -198,8 +199,34 @@
       </article>
     </div>
   </section>
-
-  <!-- ====== CONTACT ====== -->
+  
+  
+<section id="blog" class="container section blog">
+  <h2>Blog</h2>
+  <div class="blog-list">
+    <article class="blog-post">
+      <h3>How I Built a Wazuh Detection Lab to Hunt Real-World Threats</h3>
+      <small>August 2025</small>
+      <p>Walk through setting up Wazuh, simulating attacks, and analyzing alerts. Practical tips for building your own detection environment.</p>
+      <a href="blog/wazuh-detection-lab.html" class="btn-outline">Read More</a>
+    </article>
+    <article class="blog-post">
+      <h3>Understanding the MITRE ATT&CK Framework: A Guide for Aspiring SOC Analysts</h3>
+      <small>July 2025</small>
+      <p>Learn about the MITRE ATT&CK framework, its importance, and how it integrates with cybersecurity labs and threat hunting.</p>
+      <a href="blog/mitre-attack-guide.html" class="btn-outline">Read More</a>
+    </article>
+    <article class="blog-post">
+      <h3>Top 5 Essential Tools Every Cybersecurity Intern Should Learn in 2025</h3>
+      <small>June 2025</small>
+      <p>Insights on must-know tools like Wazuh, Velociraptor, Splunk, Snort, and pfSense, and how to get hands-on experience with them.</p>
+      <a href="blog/essential-tools-2025.html" class="btn-outline">Read More</a>
+    </article>
+  </div>
+</section>
+  
+  
+  
   <section id="contact" class="container section contact">
     <h2>Contact</h2>
     <p>If you'd like to connect — email me or view my GitHub and LinkedIn.</p>
@@ -211,21 +238,12 @@
     </div>
   </section>
 
-  <!-- ====== FOOTER ====== -->
   <footer class="footer">
     <div class="container">
       <small>© 2025 Loksharan Saravanan • Built with HTML, CSS & JS • <a href="assets/resume.pdf">Resume</a></small>
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle script
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

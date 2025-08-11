@@ -2,10 +2,8 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-// Toggle mobile nav
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
-  navToggle.classList.toggle('open');
 });
 
 // Smooth scroll for nav links
@@ -21,8 +19,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       // Close nav on mobile after click
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
-        navToggle.classList.remove('open');
       }
     }
   });
+});
+
+// Theme toggle logic
+const themeToggleCheckbox = document.getElementById('theme-toggle');
+
+// Load saved theme or default to dark
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.setAttribute('data-theme', savedTheme);
+themeToggleCheckbox.checked = savedTheme === 'light';
+
+// Listen for toggle changes
+themeToggleCheckbox.addEventListener('change', () => {
+  if (themeToggleCheckbox.checked) {
+    document.body.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
 });
