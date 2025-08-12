@@ -267,7 +267,8 @@ nav.nav {
   background: #071026;
   padding: 18px 24px;
   border-radius: 12px;
-  box-shadow: 0 0 24px 3px #2ec4b6;
+  box-shadow: 0 0 24px 1px #0288d1;
+
   min-width: 110px;
   text-align: center;
   transition: box-shadow 0.3s ease;
@@ -280,7 +281,7 @@ nav.nav {
   color: #2ec4b6;
   margin-bottom: 6px;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 6px #2ec4b6;
+  text-shadow: 0 0 1px #2ec4b6;
 }
 
 /* Metric label style */
@@ -730,6 +731,7 @@ footer.footer a:focus {
   /* Show hamburger menu button */
   .nav-toggle {
     display: block;
+    margin-left: auto; /* Push toggle to the right */
   }
 
   /* Hide nav-links by default on mobile */
@@ -761,15 +763,16 @@ footer.footer a:focus {
     display: block;
   }
 
-  /* Nav container: stack vertically on mobile */
+  /* Nav container: flex row with brand left and toggle right */
   nav.nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;      /* Changed from column to row */
+    align-items: center;      /* Vertically center brand & toggle */
+    width: 100%;
   }
 
-  /* Brand stays on top with margin */
+  /* Remove bottom margin on brand since no vertical stacking */
   .brand {
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
 
   /* Hero section stacks vertically on mobile */
