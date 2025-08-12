@@ -1,73 +1,39 @@
 // ====== MOBILE NAVIGATION TOGGLE ======
-// Select hamburger button and navigation links container
+
+// Select the hamburger button element
 const navToggle = document.querySelector('.nav-toggle');
+
+// Select the navigation links container
 const navLinks = document.querySelector('.nav-links');
 
-// Toggle the 'active' class on nav-links to show/hide menu on mobile
+// Add click event listener to hamburger button
 navToggle.addEventListener('click', () => {
+  // Toggle 'active' class on nav-links to show/hide menu on mobile
   navLinks.classList.toggle('active');
 });
 
+
 // ====== SMOOTH SCROLL FOR ANCHOR LINKS ======
-// Select all anchor links starting with '#'
+
+// Select all anchor links that link to an id within the page (href starts with '#')
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault(); // prevent default jump
+    e.preventDefault(); // Prevent default jump to anchor
 
-    // Get the target element to scroll to
+    // Get the target element to scroll to using href attribute value
     const target = document.querySelector(this.getAttribute('href'));
+
     if (target) {
-      // Smoothly scroll to the target element at the top of viewport
+      // Smoothly scroll the target element into view, aligned at the top
       target.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
 
-      // If nav is open (mobile), close it after clicking a link
+      // If mobile nav is open, close it after clicking a link
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
       }
     }
   });
-});
-
-// ====== THEME TOGGLE LOGIC ======
-
-// Select the checkbox input for theme toggle
-const themeToggleCheckbox = document.getElementById('theme-toggle');
-// Reference to body to set data-theme attribute
-const body = document.body;
-// Optional: Element to show theme icon (sun/moon)
-const themeIcon = document.getElementById('theme-icon');
-
-// Function to apply theme and save preference
-function applyTheme(theme) {
-  if (theme === 'light') {
-    body.setAttribute('data-theme', 'light'); // add light theme attribute
-    if (themeIcon) themeIcon.textContent = '🌞'; // sun icon
-    themeToggleCheckbox.checked = true; // check toggle
-  } else {
-    body.setAttribute('data-theme', 'dark'); // add dark theme attribute
-    if (themeIcon) themeIcon.textContent = '🌙'; // moon icon
-    themeToggleCheckbox.checked = false; // uncheck toggle
-  }
-  // Save user preference to localStorage
-  localStorage.setItem('theme', theme);
-}
-
-// Load saved theme or default to dark if none saved
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light' || savedTheme === 'dark') {
-  applyTheme(savedTheme);
-} else {
-  applyTheme('dark'); // fallback default
-}
-
-// Listen for changes on the toggle checkbox
-themeToggleCheckbox.addEventListener('change', () => {
-  if (themeToggleCheckbox.checked) {
-    applyTheme('light');
-  } else {
-    applyTheme('dark');
-  }
 });
