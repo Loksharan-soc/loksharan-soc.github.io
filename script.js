@@ -56,8 +56,12 @@ function applyTheme(theme) {
 }
 
 // Load saved theme or default to dark if none saved
-const savedTheme = localStorage.getItem('theme') || 'dark';
-applyTheme(savedTheme);
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light' || savedTheme === 'dark') {
+  applyTheme(savedTheme);
+} else {
+  applyTheme('dark'); // fallback default
+}
 
 // Listen for changes on the toggle checkbox
 themeToggleCheckbox.addEventListener('change', () => {

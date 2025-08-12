@@ -1,21 +1,64 @@
-/* ====== RESET & BASE STYLES ====== */
+/* ====== RESET & BASE STYLES (UPDATED) ======
+   Minimal edits: added color variables, safe-area handling,
+   fixed mobile nav wrapping and cleaned a few mobile !important lines.
+   All class names are unchanged from your original file.
+*/
 
-/* Reset margin, padding, and box-sizing for all elements */
+/* ---------- THEME VARIABLES ---------- */
+:root{
+  --bg: #0b111f;            /* page background (dark) */
+  --text: #cfd8dc;          /* default body text (dark theme) */
+  --muted: #6798a6;         /* muted small text */
+  --surface: #071026;       /* card / panel background (dark) */
+  --card-shadow-color: rgba(46,196,182,0.14); /* soft accent glow */
+  --accent: #2ec4b6;        /* accent / highlight */
+  --primary: #0288d1;       /* primary buttons */
+  --link: #4dd0e1;          /* link color */
+  --metric-value: #d0e9f9;  /* metric numbers color (dark) */
+  --nav-bg: #071026;
+  --card-text: #a3c1ce;
+  --card-shadow: 0 0 18px rgba(2,136,209,0.12);
+}
+
+/* Light theme overrides (applies when JS sets body[data-theme='light']) */
+body[data-theme='light'] {
+  --bg: #fdfdfd;
+  --text: #0b111f;
+  --muted: #557a8a;
+  --surface: #e3f2fd;         /* soft light blue surface similar to original override */
+  --card-bg: #ffffff;
+  --card-text: #01579b;
+  --accent: #026fa3;
+  --primary: #0288d1;
+  --link: #0288d1;
+  --metric-value: #01579b;
+  --card-shadow-color: rgba(2,136,209,0.12);
+  --card-shadow: 0 0 18px rgba(2,136,209,0.12);
+  --nav-bg: #e1f5fe;
+}
+
+/* ---------- Generic reset & tweaks for iOS ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base body styles */
+html {
+  -webkit-text-size-adjust: 100%; /* prevents unexpected zoom on iOS */
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
-  background: #0b111f; /* Dark navy background */
-  color: #cfd8dc; /* Light grey text */
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease; /* smooth theme transition */
+  transition: background-color 0.28s ease, color 0.28s ease;
+  /* safe-area for iPhone notch: allow header to account for notch */
+  padding-top: env(safe-area-inset-top, 0);
 }
 
 /* Container to center content and limit width */
@@ -27,13 +70,13 @@ body {
 
 /* Link styles */
 a {
-  color: #4dd0e1;
+  color: var(--link);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.22s ease;
 }
 
 a:hover {
-  color: #81d4fa;
+  color: var(--accent);
 }
 
 /* ====== BUTTONS ====== */
@@ -53,45 +96,47 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: #0288d1;
+  background-color: var(--primary);
   color: #fff;
-  border-color: #0288d1;
+  border-color: var(--primary);
 }
 
 .btn-primary:hover {
-  background-color: #026fa3;
-  border-color: #026fa3;
+  background-color: color-mix(in srgb, var(--primary) 80%, black 20%);
+  border-color: color-mix(in srgb, var(--primary) 80%, black 20%);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: #4dd0e1;
-  border-color: #4dd0e1;
+  color: var(--link);
+  border-color: var(--link);
 }
 
 .btn-outline:hover {
-  background-color: #4dd0e1;
-  color: #0b111f;
+  background-color: var(--link);
+  color: var(--bg);
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: #81d4fa;
+  color: color-mix(in srgb, var(--link) 65%, white 35%);
   border-color: transparent;
 }
 
 .btn-ghost:hover {
-  color: #b3e5fc;
+  color: color-mix(in srgb, var(--link) 85%, white 15%);
 }
 
 /* ====== HEADER & NAVIGATION ====== */
 
 header.nav-wrap {
-  background: #071026;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  background: var(--nav-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
   position: sticky;
   top: 0;
   z-index: 100;
+  /* ensure notch doesn't overlap content in iOS */
+  padding-top: env(safe-area-inset-top, 0);
 }
 
 nav.nav {
@@ -99,7 +144,7 @@ nav.nav {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allow wrapping by default to prevent overflow on small widths */
 }
 
 /* Brand / logo */
@@ -108,21 +153,21 @@ nav.nav {
   align-items: center;
   font-weight: 700;
   font-size: 1.4rem;
-  color: #4dd0e1;
+  color: var(--link);
 }
 
 .brand .logo-dot {
   height: 14px;
   width: 14px;
-  background: #0288d1;
+  background: var(--primary);
   border-radius: 50%;
   margin-right: 8px;
-  box-shadow: 0 0 12px #0288d1;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--primary) 60%, transparent 40%);
 }
 
 .brand-sub {
   font-size: 0.75rem;
-  color: #2ec4b6;
+  color: var(--accent);
   margin-left: 8px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -143,13 +188,13 @@ nav.nav {
 .nav-links li a {
   padding: 6px 10px;
   border-radius: 5px;
-  color: #81d4fa;
+  color: color-mix(in srgb, var(--link) 85%, var(--text) 15%);
   user-select: none;
 }
 
 .nav-links li a:hover {
-  background: #026fa3;
-  color: #ccefff;
+  background: color-mix(in srgb, var(--primary) 12%, transparent 88%);
+  color: color-mix(in srgb, var(--text) 85%, var(--link) 15%);
 }
 
 /* Hamburger nav toggle button (hidden on desktop) */
@@ -158,7 +203,7 @@ nav.nav {
   background: none;
   border: none;
   font-size: 1.6rem;
-  color: #81d4fa;
+  color: var(--link);
   cursor: pointer;
 }
 
@@ -178,7 +223,7 @@ nav.nav {
   font-size: 1.4rem;
   user-select: none;
   transition: color 0.3s ease;
-  color: #81d4fa;
+  color: var(--link);
 }
 
 /* ====== HERO SECTION ====== */
@@ -189,7 +234,7 @@ nav.nav {
   padding: 40px 0;
   gap: 30px;
   align-items: center;
-  color: #d0e9f9;
+  color: var(--metric-value);
 }
 
 .hero-left {
@@ -204,8 +249,8 @@ nav.nav {
 }
 
 .accent {
-  color: #2ec4b6;
-  text-shadow: 0 0 6px #2ec4b6;
+  color: var(--accent);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--accent) 40%, transparent 60%);
 }
 
 .hero-sub {
@@ -216,6 +261,7 @@ nav.nav {
   line-height: 1.4;
 }
 
+/* CTA spacing preserved */
 .hero-cta a {
   margin-right: 15px;
 }
@@ -228,10 +274,10 @@ nav.nav {
 }
 
 .metric {
-  background: #071026;
+  background: var(--surface);
   padding: 18px 24px;
   border-radius: 12px;
-  box-shadow: 0 0 18px #2ec4b6;
+  box-shadow: 0 0 18px var(--card-shadow-color);
   min-width: 110px;
   text-align: center;
 }
@@ -239,7 +285,7 @@ nav.nav {
 .metric-value {
   font-size: 1.8rem;
   font-weight: 800;
-  color: grey;
+  color: var(--metric-value);
   margin-bottom: 6px;
   letter-spacing: 0.05em;
 }
@@ -247,7 +293,7 @@ nav.nav {
 .metric-label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #8fbcc7;
+  color: color-mix(in srgb, var(--link) 55%, var(--text) 45%);
 }
 
 /* Hero right side cards container */
@@ -260,11 +306,11 @@ nav.nav {
 
 /* Generic card styling */
 .card {
-  background: #071026;
+  background: var(--surface);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 18px #0288d1;
-  color: #a3c1ce;
+  box-shadow: var(--card-shadow);
+  color: var(--card-text);
 }
 
 /* Profile card specific */
@@ -276,23 +322,23 @@ nav.nav {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  border: 3px solid #2ec4b6;
+  border: 3px solid var(--accent);
   margin-bottom: 12px;
   object-fit: cover;
-  box-shadow: 0 0 14px #2ec4b6;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 45%, transparent 55%);
   max-width: 100%;
   height: auto;
 }
 
 .profile-card h3 {
-  color: #2ec4b6;
+  color: var(--accent);
   margin-bottom: 4px;
   font-weight: 700;
 }
 
 .muted {
   font-size: 0.9rem;
-  color: #6798a6;
+  color: var(--muted);
   margin-bottom: 14px;
 }
 
@@ -304,32 +350,32 @@ nav.nav {
 }
 
 .badge {
-  background: #0288d1;
-  color: #d0e9f9;
+  background: var(--primary);
+  color: var(--metric-value);
   padding: 4px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 0 6px #0288d1;
+  box-shadow: 0 0 6px color-mix(in srgb, var(--primary) 40%, transparent 60%);
 }
 
 .quick-links a {
   display: inline-block;
-  color: #2ec4b6;
+  color: var(--accent);
   font-weight: 600;
   margin: 0 8px;
   transition: color 0.3s ease;
 }
 
 .quick-links a:hover {
-  color: #81d4fa;
+  color: var(--link);
 }
 
 /* ====== ABOUT SECTION ====== */
 
 .section {
   padding: 60px 0 40px;
-  color: #d0e9f9;
+  color: var(--metric-value);
 }
 
 .about-grid {
@@ -348,7 +394,7 @@ nav.nav {
 .about-list {
   list-style: none;
   margin-top: 20px;
-  color: #81d4fa;
+  color: var(--link);
 }
 
 .about-list li {
@@ -364,23 +410,23 @@ nav.nav {
 }
 
 .stat {
-  background: #071026;
+  background: var(--surface);
   border-radius: 14px;
   padding: 18px 24px;
-  box-shadow: 0 0 18px #0288d1;
+  box-shadow: 0 0 18px var(--card-shadow-color);
   text-align: center;
 }
 
 .stat-value {
   font-size: 1.7rem;
   font-weight: 800;
-  color: #2ec4b6;
+  color: var(--accent);
   margin-bottom: 6px;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  color: #87cfdc;
+  color: color-mix(in srgb, var(--link) 60%, var(--text) 40%);
   font-weight: 600;
 }
 
@@ -393,18 +439,18 @@ nav.nav {
 }
 
 .skill-card {
-  background: #071026;
+  background: var(--surface);
   padding: 24px;
   border-radius: 14px;
-  box-shadow: 0 0 18px #0288d1;
+  box-shadow: 0 0 18px var(--card-shadow-color);
   text-align: center;
-  color: #a3c1ce;
+  color: var(--card-text);
 }
 
 .skill-card h4 {
   margin-bottom: 12px;
   font-weight: 700;
-  color: #2ec4b6;
+  color: var(--accent);
 }
 
 /* ====== CERTIFICATES SECTION ====== */
@@ -417,20 +463,20 @@ nav.nav {
 }
 
 .certificate-card {
-  background: #071026;
+  background: var(--surface);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 0 18px #0288d1;
-  color: #a3c1ce;
+  box-shadow: 0 0 18px var(--card-shadow-color);
+  color: var(--card-text);
   transition: box-shadow 0.3s ease;
 }
 
 .certificate-card:hover {
-  box-shadow: 0 0 28px #2ec4b6;
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 30%, transparent 70%);
 }
 
 .certificate-card h3 {
-  color: #2ec4b6;
+  color: var(--accent);
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 1.25rem;
@@ -439,12 +485,12 @@ nav.nav {
 .certificate-card p {
   font-size: 1rem;
   line-height: 1.4;
-  color: #d0e9f9;
+  color: var(--metric-value);
 }
 
 .certificate-card p em {
   font-style: italic;
-  color: #81d4fa;
+  color: var(--link);
 }
 
 /* ====== PROJECTS SECTION ====== */
@@ -457,19 +503,19 @@ nav.nav {
 }
 
 .project-card {
-  background: #071026;
+  background: var(--surface);
   border-radius: 14px;
   padding: 22px 24px;
-  box-shadow: 0 0 20px #0288d1;
+  box-shadow: 0 0 20px var(--card-shadow-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #a3c1ce;
+  color: var(--card-text);
   transition: box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 0 0 28px #2ec4b6;
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 30%, transparent 70%);
 }
 
 .project-header {
@@ -480,12 +526,12 @@ nav.nav {
 }
 
 .project-header h3 {
-  color: #2ec4b6;
+  color: var(--accent);
   font-weight: 700;
 }
 
 .pill {
-  background-color: #026fa3;
+  background-color: color-mix(in srgb, var(--primary) 95%, black 5%);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -497,21 +543,21 @@ nav.nav {
 
 .project-links a {
   font-weight: 600;
-  color: #81d4fa;
+  color: var(--link);
   margin-right: 16px;
   user-select: none;
   transition: color 0.3s ease;
 }
 
 .project-links a:hover {
-  color: #2ec4b6;
+  color: var(--accent);
 }
 
 .project-links a.demo {
   font-style: italic;
 }
 
-/* ====== BLOG SECTION ====== */
+/* ====== BLOG & CONTACT & FOOTER ====== */
 
 .blog-list {
   display: grid;
@@ -521,22 +567,22 @@ nav.nav {
 }
 
 .blog-post {
-  background: #071026;
+  background: var(--surface);
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 0 18px #0288d1;
-  color: #a3c1ce;
+  box-shadow: 0 0 18px var(--card-shadow-color);
+  color: var(--card-text);
 }
 
 .blog-post h3 {
-  color: #2ec4b6;
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
 .blog-post small {
   display: block;
   margin-bottom: 12px;
-  color: #6798a6;
+  color: var(--muted);
   font-size: 0.85rem;
 }
 
@@ -547,20 +593,20 @@ nav.nav {
 
 .blog-post a {
   font-weight: 600;
-  color: #81d4fa;
+  color: var(--link);
   text-decoration: none;
-  border: 2px solid #81d4fa;
+  border: 2px solid var(--link);
   padding: 6px 12px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .blog-post a:hover {
-  background-color: #81d4fa;
-  color: #0b111f;
+  background-color: var(--link);
+  color: var(--bg);
 }
 
-/* ====== CONTACT SECTION ====== */
+/* ====== CONTACT & FOOTER ====== */
 
 .contact-row {
   display: flex;
@@ -571,11 +617,11 @@ nav.nav {
 }
 
 .contact-card {
-  background: #071026;
+  background: var(--surface);
   padding: 18px 24px;
   border-radius: 14px;
-  box-shadow: 0 0 18px #0288d1;
-  color: #81d4fa;
+  box-shadow: 0 0 18px var(--card-shadow-color);
+  color: var(--link);
   font-weight: 600;
   text-align: center;
   width: 140px;
@@ -583,17 +629,15 @@ nav.nav {
 }
 
 .contact-card:hover {
-  box-shadow: 0 0 28px #2ec4b6;
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 40%, transparent 60%);
 }
 
-/* ====== FOOTER ====== */
-
 footer.footer {
-  background: #071026;
+  background: var(--nav-bg);
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
-  color: #557a8a;
+  color: color-mix(in srgb, var(--text) 70%, var(--muted) 30%);
   margin-top: 40px;
 }
 
@@ -605,14 +649,12 @@ footer.footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100% !important;
-    background: #071026;
-    margin-top: 12px !important;
-    padding: 12px 0 !important;
+    width: 100%;
+    background: var(--surface);
+    margin-top: 12px;
+    padding: 12px 0;
     border-radius: 8px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin: 0 !important;
+    box-sizing: border-box;
   }
 
   /* Show nav links when toggled */
@@ -631,9 +673,9 @@ footer.footer {
     display: block;
   }
 
-  /* Prevent nav wrapping in small screens */
+  /* Allow nav to wrap on small screens to avoid overflow */
   nav.nav {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   /* Stack hero vertically, center text */
@@ -677,52 +719,20 @@ footer.footer {
   }
 }
 
-/* ====== LIGHT THEME OVERRIDES (Uncomment to enable light theme) ====== */
-
-
-body[data-theme='light'] {
-  background: #fefefe;
-  color: #222;
-}
-
-body[data-theme='light'] a {
-  color: #0288d1;
-}
-
-body[data-theme='light'] a:hover {
-  color: #014f86;
-}
-
-body[data-theme='light'] header.nav-wrap {
-  background: #e1f5fe;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-body[data-theme='light'] .nav-links li a {
-  color: #0288d1;
-}
-
-body[data-theme='light'] .nav-links li a:hover {
-  background: #bbdefb;
-  color: #014f86;
-}
-
+/* If the user toggles light theme but some rare elements still have inline color,
+   forcing them to be theme-aware can be done with these fallbacks below. */
+body[data-theme='light'] .metric-value,
 body[data-theme='light'] .card,
-body[data-theme='light'] .metric,
 body[data-theme='light'] .stat,
 body[data-theme='light'] .project-card,
 body[data-theme='light'] .contact-card,
-body[data-theme='light'] .blog-list,
-body[data-theme='light'] footer.footer {
-  background: #e3f2fd;
-  color: #01579b;
-  box-shadow: 0 0 18px #81d4fa;
+body[data-theme='light'] .blog-post,
+body[data-theme='light'] .certificate-card,
+body[data-theme='light'] .badge,
+body[data-theme='light'] .profile-card h3 {
+  /* use variables defined above, so everything is consistent */
+  color: inherit;
+  background: none;
 }
 
-body[data-theme='light'] .certificate-card:hover,
-body[data-theme='light'] .project-card:hover,
-body[data-theme='light'] .contact-card:hover {
-  box-shadow: 0 0 28px #0288d1;
-}
-
-
+/* END of updated CSS */
