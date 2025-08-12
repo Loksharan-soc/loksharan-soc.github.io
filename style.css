@@ -1,57 +1,37 @@
-/* ====== RESET & BASE STYLES ====== */
-
-/* Reset margin and padding for all elements and use border-box sizing for predictable layouts */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base body styles */
 body {
-  background: #0b111f;       /* Dark navy background for good contrast */
-  color: #cfd8dc;            /* Light text color for readability */
-  font-family: 'Inter', sans-serif; /* Modern, clean sans-serif font */
-  line-height: 1.6;          /* Comfortable line spacing */
-  min-height: 100vh;         /* Full viewport height */
-  overflow-x: hidden;        /* Prevent horizontal scroll */
-  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transitions if colors change */
+  background: #0b111f;
+  color: #cfd8dc;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden; /* prevent horizontal scroll */
 }
 
-/* Container to center content and limit max width */
+/* Container */
 .container {
   max-width: 1100px;
-  margin: 0 auto;            /* Center horizontally */
-  padding: 0 20px;           /* Side padding for breathing room */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Responsive container for header/footer on mobile */
-@media (max-width: 768px) {
-  header.nav-wrap .container,
-  footer.footer .container {
-    max-width: 100%;         /* Full width on smaller screens */
-    padding: 0 12px;         /* Reduced side padding */
-    margin: 0;
-  }
-}
-
-/* Link base styles */
+/* Links */
 a {
-  color: #4dd0e1;            /* Bright cyan links */
-  text-decoration: none;     /* Remove underline */
-  transition: color 0.3s ease; /* Smooth color change on hover */
+  color: #4dd0e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #81d4fa;
 }
 
-/* Link hover/focus states */
-a:hover,
-a:focus {
-  color: #81d4fa;            /* Lighter blue on hover/focus */
-  outline: none;             /* Remove default outline */
-}
-
-/* ====== BUTTONS ====== */
-
-/* Base styles shared by all button types */
+/* Buttons */
 .btn-primary,
 .btn-outline,
 .btn-ghost {
@@ -63,73 +43,58 @@ a:focus {
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
   text-align: center;
-  border: 2px solid transparent; /* Default no border */
+  border: 2px solid transparent;
 }
 
-/* Primary button: blue background with glow */
+/* Primary button */
 .btn-primary {
   background-color: #0288d1;
   color: #fff;
   border-color: #0288d1;
-  box-shadow: 0 4px 10px rgba(2, 136, 209, 0.6);
 }
-
-.btn-primary:hover,
-.btn-primary:focus {
+.btn-primary:hover {
   background-color: #026fa3;
   border-color: #026fa3;
-  box-shadow: 0 6px 15px rgba(2, 111, 163, 0.8);
-  outline: none;
 }
 
-/* Outline button: transparent with blue border */
+/* Outline button */
 .btn-outline {
   background-color: transparent;
   color: #4dd0e1;
   border-color: #4dd0e1;
 }
-
-.btn-outline:hover,
-.btn-outline:focus {
+.btn-outline:hover {
   background-color: #4dd0e1;
   color: #0b111f;
-  outline: none;
 }
 
-/* Ghost button: transparent background with subtle blue text */
+/* Ghost button */
 .btn-ghost {
   background-color: transparent;
   color: #81d4fa;
   border-color: transparent;
 }
-
-.btn-ghost:hover,
-.btn-ghost:focus {
+.btn-ghost:hover {
   color: #b3e5fc;
-  outline: none;
 }
 
-/* ====== HEADER & NAVIGATION ====== */
-
-/* Header wrapper: dark background with shadow and sticky position */
+/* Header / Nav */
 header.nav-wrap {
   background: #071026;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
   position: sticky;
   top: 0;
-  z-index: 100; /* Stay above other content */
+  z-index: 100;
 }
 
-/* Navigation bar: flex container with spacing */
 nav.nav {
   display: flex;
-  justify-content: space-between; /* Brand left, nav links right */
+  justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  flex-wrap: wrap; /* Wrap nav links if needed */
+  flex-wrap: wrap;
 }
 
-/* Brand container: flex to align logo dot and text */
 .brand {
   display: flex;
   align-items: center;
@@ -138,17 +103,15 @@ nav.nav {
   color: #4dd0e1;
 }
 
-/* Small colored dot next to brand text */
 .brand .logo-dot {
   height: 14px;
   width: 14px;
   background: #0288d1;
   border-radius: 50%;
   margin-right: 8px;
-  box-shadow: 0 0 14px #0288d1;
+  box-shadow: 0 0 12px #0288d1;
 }
 
-/* Brand subtitle with smaller font and different color */
 .brand-sub {
   font-size: 0.75rem;
   color: #2ec4b6;
@@ -158,57 +121,38 @@ nav.nav {
   text-transform: uppercase;
 }
 
-/* Navigation links container: flex with spacing */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 18px;
-  transition: max-height 0.3s ease;
 }
 
-/* Each nav link item */
 .nav-links li {
   font-weight: 600;
 }
 
-/* Nav link anchors */
 .nav-links li a {
   padding: 6px 10px;
   border-radius: 5px;
   color: #81d4fa;
-  user-select: none;
-  display: inline-block;
 }
 
-/* Hover and focus styles for nav links */
-.nav-links li a:hover,
-.nav-links li a:focus {
+.nav-links li a:hover {
   background: #026fa3;
   color: #ccefff;
-  outline: none;
 }
 
-/* Hamburger toggle button for mobile - hidden on desktop */
+/* Nav toggle for small screens */
 .nav-toggle {
-  display: none; /* Show only on mobile */
+  display: none;
   background: none;
   border: none;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #81d4fa;
   cursor: pointer;
-  user-select: none;
-  transition: color 0.3s ease;
 }
 
-.nav-toggle:hover,
-.nav-toggle:focus {
-  color: #2ec4b6;
-  outline: none;
-}
-
-/* ====== HERO SECTION ====== */
-
-/* Hero container: flex with wrap, spacing, and vertical center */
+/* Hero Section */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -218,79 +162,64 @@ nav.nav {
   color: #d0e9f9;
 }
 
-/* Left side of hero: flexible width */
 .hero-left {
   flex: 1 1 400px;
 }
 
-/* Main hero title */
 .hero-title {
   font-size: 2.8rem;
   margin-bottom: 12px;
   font-weight: 800;
   letter-spacing: 1px;
-  text-shadow: 0 0 4px #2ec4b6;
 }
 
-/* Accent text style */
 .accent {
   color: #2ec4b6;
-  text-shadow: 0 0 8px #2ec4b6;
+  text-shadow: 0 0 6px #2ec4b6;
 }
 
-/* Hero subtitle */
 .hero-sub {
   font-size: 1.15rem;
   font-weight: 400;
   margin-bottom: 25px;
   max-width: 600px;
   line-height: 1.4;
-  color: #c3d6e1;
-  text-shadow: 0 0 3px #026fa3;
 }
 
-/* Container for hero call-to-action buttons */
 .hero-cta a {
   margin-right: 15px;
 }
 
-/* Metrics container: flex horizontal row with gap */
 .metrics {
   display: flex;
   gap: 30px;
   margin-top: 30px;
-  justify-content: flex-start;
 }
 
-/* Individual metric card with background and glow */
 .metric {
   background: #071026;
   padding: 18px 24px;
   border-radius: 12px;
-  box-shadow: 0 0 24px 3px #2ec4b6;
+  box-shadow: 0 0 18px #2ec4b6;
   min-width: 110px;
   text-align: center;
-  transition: box-shadow 0.3s ease;
 }
 
-/* Metric number style */
 .metric-value {
-  font-size: 1.9rem;
-  font-weight: 900;
+  font-size: 1.8rem;
+  font-weight: 800;
   color: #2ec4b6;
   margin-bottom: 6px;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 6px #2ec4b6;
 }
 
-/* Metric label style */
 .metric-label {
   font-size: 0.85rem;
   font-weight: 600;
   color: #8fbcc7;
 }
 
-/* Right side hero: flex column for profile card */
+/* Hero right side profile */
 .hero-right {
   flex: 0 1 300px;
   display: flex;
@@ -298,27 +227,19 @@ nav.nav {
   gap: 24px;
 }
 
-/* Generic card styles */
+/* Cards */
 .card {
   background: #071026;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 25px 3px #0288d1;
+  box-shadow: 0 0 18px #0288d1;
   color: #a3c1ce;
-  transition: box-shadow 0.3s ease;
 }
 
-/* Card hover glow */
-.card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
-
-/* Profile card text center */
 .profile-card {
   text-align: center;
 }
 
-/* Avatar image styles */
 .avatar {
   width: 130px;
   height: 130px;
@@ -326,27 +247,23 @@ nav.nav {
   border: 3px solid #2ec4b6;
   margin-bottom: 12px;
   object-fit: cover;
-  box-shadow: 0 0 20px #2ec4b6;
+  box-shadow: 0 0 14px #2ec4b6;
   max-width: 100%;
   height: auto;
 }
 
-/* Profile heading */
 .profile-card h3 {
   color: #2ec4b6;
   margin-bottom: 4px;
   font-weight: 700;
-  text-shadow: 0 0 6px #2ec4b6;
 }
 
-/* Muted text style */
 .muted {
   font-size: 0.9rem;
   color: #6798a6;
   margin-bottom: 14px;
 }
 
-/* Badge container for skills */
 .badge-row {
   display: flex;
   justify-content: center;
@@ -354,7 +271,6 @@ nav.nav {
   margin-bottom: 14px;
 }
 
-/* Individual badge styling */
 .badge {
   background: #0288d1;
   color: #d0e9f9;
@@ -362,10 +278,9 @@ nav.nav {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 0 10px #0288d1;
+  box-shadow: 0 0 6px #0288d1;
 }
 
-/* Quick links container */
 .quick-links a {
   display: inline-block;
   color: #2ec4b6;
@@ -373,20 +288,64 @@ nav.nav {
   margin: 0 8px;
   transition: color 0.3s ease;
 }
-
-/* Quick links hover */
 .quick-links a:hover {
   color: #81d4fa;
 }
 
-/* ====== ABOUT SECTION ====== */
+/* Mini panel */
+.mini-panel h4 {
+  color: #2ec4b6;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
 
+.alert-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #0b1826;
+  padding-top: 10px;
+}
+
+.alert-sev {
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #0b111f;
+  text-shadow: 0 0 3px #0b111f;
+  user-select: none;
+  width: 70px;
+  text-align: center;
+}
+
+.alert-sev.high {
+  background: #d32f2f;
+  box-shadow: 0 0 12px #d32f2f;
+}
+
+.alert-body {
+  flex: 1;
+  color: #9ccfd8;
+}
+
+.alert-title {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.alert-sub {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Section base styles */
 .section {
   padding: 60px 0 40px;
   color: #d0e9f9;
 }
 
-/* About grid container: flex wrap with gap */
+/* About section */
 .about-grid {
   display: flex;
   flex-wrap: wrap;
@@ -394,154 +353,86 @@ nav.nav {
   align-items: center;
 }
 
-/* About text column */
 .about-text {
-  flex: 1 1 400px;
+  flex: 1 1 480px;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* About list styling */
 .about-list {
   list-style: none;
   margin-top: 20px;
   color: #81d4fa;
 }
 
-/* Individual list item */
 .about-list li {
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-/* About stats column: vertical stack */
+/* About stats */
 .about-stats {
-  flex: 1 1 100px;
+  flex: 1 1 280px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* Individual stat card */
 .stat {
   background: #071026;
   border-radius: 14px;
   padding: 18px 24px;
-  box-shadow: 0 0 25px 3px #0288d1;
+  box-shadow: 0 0 18px #0288d1;
   text-align: center;
-  transition: box-shadow 0.3s ease;
 }
 
-/* Stat value */
 .stat-value {
   font-size: 1.7rem;
   font-weight: 800;
   color: #2ec4b6;
   margin-bottom: 6px;
-  text-shadow: 0 0 6px #2ec4b6;
 }
 
-/* Stat label */
 .stat-label {
   font-size: 0.9rem;
   color: #87cfdc;
   font-weight: 600;
 }
 
-/* ====== SKILLS SECTION ====== */
-
-/* Skills grid with auto-fit columns */
+/* Skills */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 24px;
 }
 
-/* Individual skill card */
 .skill-card {
   background: #071026;
   padding: 24px;
   border-radius: 14px;
-  box-shadow: 0 0 25px 3px #0288d1;
+  box-shadow: 0 0 18px #0288d1;
   text-align: center;
   color: #a3c1ce;
-  transition: box-shadow 0.3s ease;
 }
 
-/* Skill card hover glow */
-.skill-card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
-
-/* Skill card heading */
 .skill-card h4 {
   margin-bottom: 12px;
   font-weight: 700;
   color: #2ec4b6;
 }
 
-/* ====== CERTIFICATES SECTION ====== */
-
-/* Certificates grid */
-.certificates-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 20px;
-}
-
-/* Individual certificate card */
-.certificate-card {
-  background: #071026;
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 0 25px 3px #0288d1;
-  color: #a3c1ce;
-  transition: box-shadow 0.3s ease;
-}
-
-/* Certificate card hover glow */
-.certificate-card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
-
-/* Certificate heading */
-.certificate-card h3 {
-  color: #2ec4b6;
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 1.25rem;
-}
-
-/* Certificate description */
-.certificate-card p {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #d0e9f9;
-}
-
-/* Italic text in certificates */
-.certificate-card p em {
-  font-style: italic;
-  color: #81d4fa;
-}
-
-/* ====== PROJECTS SECTION ====== */
-
-/* Projects grid */
+/* Projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
-  margin-top: 20px;
 }
 
-/* Individual project card */
 .project-card {
   background: #071026;
   border-radius: 14px;
   padding: 22px 24px;
-  box-shadow: 0 0 25px 3px #0288d1;
+  box-shadow: 0 0 20px #0288d1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -549,12 +440,10 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Project card hover */
 .project-card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
+  box-shadow: 0 0 28px #2ec4b6;
 }
 
-/* Project header with flex for title and tags */
 .project-header {
   display: flex;
   justify-content: space-between;
@@ -562,14 +451,11 @@ nav.nav {
   margin-bottom: 14px;
 }
 
-/* Project title */
 .project-header h3 {
   color: #2ec4b6;
   font-weight: 700;
-  text-shadow: 0 0 6px #2ec4b6;
 }
 
-/* Pill badge style for project tags */
 .pill {
   background-color: #026fa3;
   padding: 4px 12px;
@@ -581,7 +467,6 @@ nav.nav {
   letter-spacing: 0.05em;
 }
 
-/* Project links */
 .project-links a {
   font-weight: 600;
   color: #81d4fa;
@@ -590,208 +475,102 @@ nav.nav {
   transition: color 0.3s ease;
 }
 
-/* Project links hover */
 .project-links a:hover {
   color: #2ec4b6;
 }
 
-/* Demo link style (italic) */
 .project-links a.demo {
   font-style: italic;
 }
 
-/* ====== BLOG SECTION ====== */
-
-/* Blog posts grid */
-.blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+/* Contact */
+.contact-row {
+  display: flex;
   gap: 24px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
 }
 
-/* Individual blog post */
-.blog-post {
+.contact-card {
   background: #071026;
-  padding: 20px;
+  padding: 18px 24px;
   border-radius: 14px;
-  box-shadow: 0 0 25px 3px #0288d1;
-  color: #a3c1ce;
+  box-shadow: 0 0 18px #0288d1;
+  color: #81d4fa;
+  font-weight: 600;
+  text-align: center;
+  width: 140px;
   transition: box-shadow 0.3s ease;
 }
 
-/* Blog post hover glow */
-.blog-post:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
+.contact-card:hover {
+  box-shadow: 0 0 28px #2ec4b6;
 }
 
-/* Blog post title */
-.blog-post h3 {
-  color: #2ec4b6;
-  margin-bottom: 8px;
-  text-shadow: 0 0 6px #2ec4b6;
-}
-
-/* Blog post date */
-.blog-post small {
-  display: block;
-  margin-bottom: 12px;
-  color: #6798a6;
-  font-size: 0.85rem;
-}
-
-/* Blog post excerpt */
-.blog-post p {
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-
-/* Blog read more link */
-.blog-post a {
-  font-weight: 600;
-  color: #81d4fa;
-  text-decoration: none;
-  border: 2px solid #81d4fa;
-  padding: 6px 14px;
-  border-radius: 8px;
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.blog-post a:hover,
-.blog-post a:focus {
-  background-color: #81d4fa;
-  color: #0b111f;
-  outline: none;
-}
-
-/* ====== CONTACT SECTION ====== */
-
-/* Contact container */
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 24px;
-  justify-content: flex-start;
-}
-
-/* Contact card links */
-.contact-card {
-  flex: 1 1 120px;
-  background: #071026;
-  padding: 18px 22px;
-  border-radius: 14px;
-  box-shadow: 0 0 25px 3px #0288d1;
-  color: #81d4fa;
-  text-align: center;
-  font-weight: 700;
-  user-select: none;
-  text-decoration: none;
-  transition: box-shadow 0.3s ease, color 0.3s ease;
-}
-
-.contact-card:hover,
-.contact-card:focus {
-  color: #2ec4b6;
-  box-shadow: 0 0 40px 6px #2ec4b6;
-  outline: none;
-}
-
-/* ====== FOOTER ====== */
-
+/* Footer */
 footer.footer {
-  padding: 24px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #6798a6;
   background: #071026;
-  border-top: 1px solid #02476b;
-  user-select: none;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #557a8a;
+  margin-top: 40px;
 }
 
-/* Footer links */
-footer.footer a {
-  color: #81d4fa;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-footer.footer a:hover,
-footer.footer a:focus {
-  color: #2ec4b6;
-  outline: none;
-}
-
-/* ====== RESPONSIVE MOBILE NAVIGATION ====== */
-
-/* Mobile specific styles at max-width 768px */
+/* Responsive Nav Toggle */
 @media (max-width: 768px) {
-  /* Show hamburger menu button */
-  .nav-toggle {
-    display: block;
-  }
-
-  /* Hide nav-links by default on mobile */
   .nav-links {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
+    display: none;
     flex-direction: column;
+    width: 100% !important;
     background: #071026;
-    border-radius: 0 0 12px 12px;
-    transition: max-height 0.3s ease-in-out;
+    margin-top: 12px !important;
+    padding: 12px 0 !important;
+    border-radius: 8px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
   }
-
-  /* Show nav-links when 'active' class is toggled */
   .nav-links.active {
-    max-height: 500px; /* enough height to show all links */
+    display: flex;
   }
-
-  /* Nav links in column */
   .nav-links li {
     margin: 12px 0;
     text-align: center;
   }
-
-  /* Nav links anchor padding bigger on mobile */
-  .nav-links li a {
-    padding: 14px 0;
-    font-size: 1.15rem;
+  .nav-toggle {
     display: block;
   }
-
-  /* Nav container: stack vertically on mobile */
   nav.nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: nowrap;
   }
-
-  /* Brand stays on top with margin */
-  .brand {
-    margin-bottom: 8px;
-  }
-
-  /* Hero section stacks vertically on mobile */
   .hero {
     flex-direction: column;
-    padding: 30px 0;
+    text-align: center;
   }
-
   .hero-left,
   .hero-right {
-    flex: 1 1 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
-
-  /* Metrics row stacks vertically */
   .metrics {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 24px;
+    justify-content: center;
   }
-
-  /* Contact cards full width on mobile */
-  .contact-card {
-    flex: 1 1 100%;
+  .about-grid {
+    flex-direction: column;
+  }
+  .about-stats {
+    flex-direction: row;
+    justify-content: center;
+    gap: 14px;
+  }
+  .avatar {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto 16px auto;
+    display: block;
   }
 }
