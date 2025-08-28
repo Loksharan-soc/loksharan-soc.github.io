@@ -798,3 +798,11 @@ footer.footer a:focus {
     flex: 1 1 100%;
   }
 }
+
+/* Home Lab Section */
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
