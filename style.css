@@ -726,15 +726,12 @@ footer.footer a:focus {
 
 /* ====== RESPONSIVE MOBILE NAVIGATION ====== */
 
-/* Mobile specific styles at max-width 768px */
 @media (max-width: 768px) {
-  /* Show hamburger menu button */
   .nav-toggle {
     display: block;
-    margin-left: auto; /* Push toggle to the right */
+    margin-left: auto;
   }
 
-  /* Hide nav-links by default on mobile */
   .nav-links {
     width: 100%;
     max-height: 0;
@@ -745,37 +742,31 @@ footer.footer a:focus {
     transition: max-height 0.3s ease-in-out;
   }
 
-  /* Show nav-links when 'active' class is toggled */
   .nav-links.active {
-    max-height: 500px; /* enough height to show all links */
+    max-height: 500px;
   }
 
-  /* Nav links in column */
   .nav-links li {
     margin: 12px 0;
     text-align: center;
   }
 
-  /* Nav links anchor padding bigger on mobile */
   .nav-links li a {
     padding: 14px 0;
     font-size: 1.15rem;
     display: block;
   }
 
-  /* Nav container: flex row with brand left and toggle right */
   nav.nav {
-    flex-direction: row;      /* Changed from column to row */
-    align-items: center;      /* Vertically center brand & toggle */
+    flex-direction: row;
+    align-items: center;
     width: 100%;
   }
 
-  /* Remove bottom margin on brand since no vertical stacking */
   .brand {
     margin-bottom: 0;
   }
 
-  /* Hero section stacks vertically on mobile */
   .hero {
     flex-direction: column;
     padding: 30px 0;
@@ -786,14 +777,12 @@ footer.footer a:focus {
     flex: 1 1 100%;
   }
 
-  /* Metrics row stacks vertically */
   .metrics {
     flex-direction: column;
     gap: 12px;
     margin-top: 24px;
   }
 
-  /* Contact cards full width on mobile */
   .contact-card {
     flex: 1 1 100%;
   }
@@ -805,4 +794,17 @@ footer.footer a:focus {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
   margin-top: 20px;
+}
+
+/* ====== PROFESSIONAL STATUS TEXT ====== */
+.status.completed {
+  color: #4caf50; /* green */
+  text-shadow: 0 0 3px rgba(76, 175, 80, 0.6); /* subtle soft glow */
+  font-weight: 600;
+}
+
+.status.in-progress {
+  color: #b36b00; /* brown/orange */
+  text-shadow: 0 0 3px rgba(179, 107, 0, 0.6); /* subtle soft glow */
+  font-weight: 600;
 }
