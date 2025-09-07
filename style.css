@@ -808,3 +808,15 @@ footer.footer a:focus {
   text-shadow: 0 0 3px rgba(179, 107, 0, 0.6); /* subtle soft glow */
   font-weight: 600;
 }
+
+
+
+
+
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* space between cards */
+}
+
