@@ -820,3 +820,35 @@ footer.footer a:focus {
   gap: 20px; /* space between cards */
 }
 
+
+
+
+
+
+
+/* Make profile card flexible */
+.hero-right {
+  max-width: 100%;
+  flex-shrink: 1;
+}
+
+/* Ensure the badge container adapts */
+.badge-base {
+  width: 100% !important;
+  min-width: 200px; /* optional */
+  box-sizing: border-box;
+}
+
+/* Optional: smaller badge for mobile */
+@media (max-width: 480px) {
+  .badge-base {
+    max-width: 250px;
+  }
+
+  /* Adjust iframe inside the badge */
+  .badge-base iframe {
+    width: 100% !important;
+    min-width: 200px;
+    height: auto !important;
+  }
+}
