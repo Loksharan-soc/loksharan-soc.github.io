@@ -176,22 +176,34 @@
 </div>
 
 <style>
-  .about-stats {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-      margin-left: 200px;   /* shift right by 40px */
+  /* Default: Desktop (vertical) */
+.about-stats {
+  display: flex;
+  flex-direction: column;  /* stack vertically */
+  gap: 2rem;
+  margin-left: 200px; /* adjust for desktop */
+}
 
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+/* On small screens (mobile), make horizontal */
+@media (max-width: 768px) {
+  .about-stats {
+    flex-direction: row;   /* side by side */
+    justify-content: center;
+    margin-left: 0;        /* reset desktop margin */
   }
 
   .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-      width: 150px;       /* shrink width */
-
+    width: auto;           /* shrink to fit */
   }
+}
+
 
   /* Just icons (no card) */
   .stat-link {
