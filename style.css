@@ -420,7 +420,7 @@ nav.nav {
 
 .stat-link.github:hover svg { color: #f3eeee; }
 .stat-link.linkedin:hover svg { color: #0A66C2; }
-.stat-link.gmail:hover svg { color: #D14836; }
+.stat-link.gmail:hover svg { color: #31eca5; }
 
 /* Mobile About Stats */
 @media (max-width: 768px) {
