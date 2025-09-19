@@ -2,28 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Loksharan Saravanan — Cybersecurity Portfolio</title>
 
-  
-  
-  
-  
-  
-  
-  
-  
+  <!-- SEO Description -->
+  <meta name="description" content="Modern cyber portfolio: SOC-style dashboard, threat-hunting projects, and software development work — by Loksharan Saravanan." />
+
   <!-- Google font: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Link to external CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
-  
-  <!-- SEO Description -->
-  <meta name="description" content="Modern cyber portfolio: SOC-style dashboard, threat-hunting projects, and software development work — by Loksharan Saravanan." />
 </head>
 <body>
-  <!-- Header & Navigation -->
+
+  <!-- ====================== HEADER / NAVIGATION ====================== -->
   <header class="nav-wrap">
     <nav class="nav container" role="navigation" aria-label="Primary Navigation">
       <!-- Brand / Logo -->
@@ -44,13 +37,14 @@
         <li><a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener" tabindex="0">Resume</a></li>
       </ul>
 
-      <!-- Hamburger menu button for mobile nav toggle -->
+      <!-- Hamburger menu button (mobile nav) -->
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     </nav>
   </header>
 
-  <!-- Main Hero Section -->
+  <!-- ====================== HERO SECTION ====================== -->
   <main id="home" class="container hero" role="main">
+    <!-- Left Column: Intro & Metrics -->
     <div class="hero-left">
       <h1 class="hero-title">Hi, I'm <span class="accent">Loksharan</span></h1>
       <p class="hero-sub">
@@ -64,7 +58,7 @@
         <a class="btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
       </div>
 
-      <!-- Metrics info -->
+      <!-- Metrics -->
       <div class="metrics">
         <div class="metric">
           <div class="metric-value">3+</div>
@@ -78,26 +72,29 @@
           <div class="metric-value">1</div>
           <div class="metric-label">Publication</div>
         </div>
-        
       </div>
     </div>
 
-    <!-- Right side profile card -->
+    <!-- Right Column: Profile Card -->
     <aside class="hero-right" aria-label="Profile Card">
       <div class="card profile-card">
-       <!-- <img src="assets/avatar.jpg" alt="Loksharan Saravanan" class="avatar" />
+        <!-- LinkedIn badge -->
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="loksharan" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/loksharan?trk=profile-badge"></a>
+        </div>
+
+        <!-- Commented-out code for optional avatar & social links -->
+        <!--
+        <img src="assets/avatar.jpg" alt="Loksharan Saravanan" class="avatar" />
         <h3>Loksharan Saravanan</h3>
         <p class="muted">MS Cybersecurity — The City College of New York (2026)</p>
- -->
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="loksharan" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/loksharan?trk=profile-badge"></a></div>
-              
-       <!--
+
         <div class="badge-row" aria-label="Skills badges">
           <span class="badge">SOC</span>
           <span class="badge">EDR</span>
           <span class="badge">DEV</span>
-        </div>-->
-        <!--
+        </div>
+
         <div class="quick-links" aria-label="Social and contact links">
           <a href="https://github.com/loksharan-soc" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/loksharan" target="_blank" rel="noopener">LinkedIn</a>
@@ -108,16 +105,18 @@
     </aside>
   </main>
 
-  <!-- About Section -->
+  <!-- ====================== ABOUT SECTION ====================== -->
   <section id="about" class="container section about" tabindex="0">
     <h2>About</h2>
     <div class="about-grid">
+
+      <!-- About text -->
       <div class="about-text">
         <p>
           I’m a Cybersecurity graduate student and former Power Programmer at Infosys, specializing in SOC operations, detection engineering, and threat hunting.
         </p>
         <p>
-          I’m pursuing my MS in Cybersecurity at The City College of New York (expected 2026) and actively seeking opportunities where I can apply my technical rigor, investigative mindset, and toolchain expertise in a SOC or Threat Hunting internship, with the goal of progressing into an entry-level Security Analyst role.
+          I’m pursuing my MS in Cybersecurity at The City College of New York (expected 2026) and actively seeking opportunities to apply my skills in a SOC or Threat Hunting internship.
         </p>
 
         <ul class="about-list">
@@ -127,412 +126,337 @@
         </ul>
       </div>
 
-      <!-- <div class="about-stats" aria-label="Key skills stats">
-        <div class="stat">
-          <div class="stat-value">Wazuh</div>
-          <div class="stat-label">SIEM & detections</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">Velociraptor</div>
-          <div class="stat-label">EDR hunts</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">C / Python</div>
-          <div class="stat-label">Secure dev</div>
-        </div>
-      </div> -->
-      
+      <!-- Social & stats -->
       <div class="about-stats" aria-label="Social Links">
-  <div class="stat">
-    <a class="stat-link github" href="https://github.com/loksharan-soc" target="_blank" rel="noopener" aria-label="GitHub">
-      <!-- GitHub SVG -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 .5C5.73.5.9 5.34.9 11.6c0 4.6 2.99 8.5 7.14 9.9.52.1.71-.23.71-.5v-1.76c-2.9.63-3.51-1.24-3.51-1.24-.47-1.2-1.15-1.52-1.15-1.52-.94-.64.07-.63.07-.63 1.04.07 1.59 1.07 1.59 1.07.93 1.6 2.44 1.14 3.04.87.09-.68.36-1.14.65-1.4-2.32-.27-4.76-1.16-4.76-5.15 0-1.14.39-2.06 1.03-2.79-.1-.27-.45-1.36.1-2.84 0 0 .84-.27 2.75 1.05A9.4 9.4 0 0 1 12 7.5c.85 0 1.71.11 2.51.32 1.9-1.32 2.74-1.05 2.74-1.05.55 1.48.2 2.57.1 2.84.64.73 1.03 1.65 1.03 2.79 0 3.99-2.45 4.88-4.78 5.14.37.32.7.95.7 1.92v2.85c0 .27.19.61.72.5 4.15-1.4 7.14-5.3 7.14-9.9C23.1 5.34 18.27.5 12 .5z" fill="currentColor"/>
-      </svg>
-    </a>
-    <div class="stat-label"></div>
-  </div>
+        <!-- GitHub -->
+        <div class="stat">
+          <a class="stat-link github" href="https://github.com/loksharan-soc" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5C5.73.5.9 5.34.9 11.6c0 4.6 2.99 8.5 7.14 9.9.52.1.71-.23.71-.5v-1.76c-2.9.63-3.51-1.24-3.51-1.24-.47-1.2-1.15-1.52-1.15-1.52-.94-.64.07-.63.07-.63 1.04.07 1.59 1.07 1.59 1.07.93 1.6 2.44 1.14 3.04.87.09-.68.36-1.14.65-1.4-2.32-.27-4.76-1.16-4.76-5.15 0-1.14.39-2.06 1.03-2.79-.1-.27-.45-1.36.1-2.84 0 0 .84-.27 2.75 1.05A9.4 9.4 0 0 1 12 7.5c.85 0 1.71.11 2.51.32 1.9-1.32 2.74-1.05 2.74-1.05.55 1.48.2 2.57.1 2.84.64.73 1.03 1.65 1.03 2.79 0 3.99-2.45 4.88-4.78 5.14.37.32.7.95.7 1.92v2.85c0 .27.19.61.72.5 4.15-1.4 7.14-5.3 7.14-9.9C23.1 5.34 18.27.5 12 .5z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
 
-  <div class="stat">
-    <a class="stat-link linkedin" href="https://www.linkedin.com/in/loksharan" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <!-- LinkedIn SVG -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.84v2.2h.05c.54-1 1.86-2.06 3.83-2.06 4.1 0 4.86 2.7 4.86 6.22V24h-4V15.2c0-2.06-.04-4.7-2.86-4.7-2.86 0-3.3 2.24-3.3 4.55V24h-4V8z" fill="currentColor"/>
-      </svg>
-    </a>
-    <div class="stat-label"></div>
-  </div>
+        <!-- LinkedIn -->
+        <div class="stat">
+          <a class="stat-link linkedin" href="https://www.linkedin.com/in/loksharan" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.84v2.2h.05c.54-1 1.86-2.06 3.83-2.06 4.1 0 4.86 2.7 4.86 6.22V24h-4V15.2c0-2.06-.04-4.7-2.86-4.7-2.86 0-3.3 2.24-3.3 4.55V24h-4V8z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
 
-  <div class="stat">
-    <a class="stat-link gmail" href="mailto:loksharan.soc@gmail.com" aria-label="Email">
-      <!-- Gmail SVG -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z" fill="currentColor"/>
-      </svg>
-    </a>
-    <div class="stat-label"></div>
-  </div>
-</div>
-
-<style>
-  /* Default: Desktop (vertical) */
-.about-stats {
-  display: flex;
-  flex-direction: column;  /* stack vertically */
-  gap: 2rem;
-  margin-left: 200px; /* adjust for desktop */
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px;
-}
-
-/* On small screens (mobile), make horizontal */
-@media (max-width: 768px) {
-  .about-stats {
-    flex-direction: row;   /* side by side */
-    justify-content: center;
-    margin-left: 0;        /* reset desktop margin */
-  }
-
-  .stat {
-    width: auto;           /* shrink to fit */
-  }
-}
-
-
-  /* Just icons (no card) */
-  .stat-link {
-    color: #374151;
-    text-decoration: none;
-    transition: transform .2s ease, color .2s ease;
-  }
-
-  .stat-link svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .stat-link:hover {
-    transform: translateY(-4px);
-  }
-
-  .stat-label {
-    margin-top: .5rem;
-    font-size: .9rem;
-    color: #4b5563;
-    text-align: center;
-  }
-
-  /* Brand hover colors */
-  .stat-link.github:hover svg   { color: #f3eeee; }
-  .stat-link.linkedin:hover svg { color: #0A66C2; }
-  .stat-link.gmail:hover svg    { color: #D14836; }
-</style>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="container section skills" tabindex="0">
-    <h2>Skills & Tools</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h4>Security Tooling</h4>
-        <p>Wazuh · Velociraptor · Splunk · Snort · pfSense</p>
+        <!-- Email -->
+        <div class="stat">
+          <a class="stat-link gmail" href="mailto:loksharan.soc@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <div class="skill-card">
-        <h4>Development</h4>
-        <p>Python · C · C++ · Flask · Git</p>
-      </div>
-
-      <div class="skill-card">
-        <h4>Infra & OS</h4>
-        <p>Windows · Ubuntu · Kali · VirtualBox · VMware</p>
-      </div>
-
-      <div class="skill-card">
-        <h4>Frameworks & Standards</h4>
-        <p>MITRE ATT&CK · YARA · ELF/PE analysis</p>
-      </div>
+      
     </div>
   </section>
 
- <!-- Certificates Section -->
-<section id="certificates" class="container section certificates" tabindex="0">
-  <h2>Certificates</h2>
-  <div class="certificates-grid">
-    <article class="certificate-card">
-      <h3>CompTIA Security+</h3>
-      <p><em><span class="status in-progress">In Progress</span> — Exam October 2025</em></p>
-    </article>
+  <!-- ====================== SKILLS SECTION ====================== -->
+  <section id="skills" class="container section skills" tabindex="0">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+      <!-- Security Operations -->
+      <div class="skill-card">
+        <h4>Security Operations</h4>
+        <div class="pills">
+          <span class="pill">Splunk</span>
+          <span class="pill">Velociraptor</span>
+          <span class="pill">Snort</span>
+          <span class="pill">pfSense</span>
+        </div>
+      </div>
 
-    <article class="certificate-card">
-      <h3>EC-Council Certified Ethical Hacker (CEH)</h3>
-      <p><em><span class="status in-progress">In Progress</span> — Exam January 2026</em></p>
-    </article>
+      <!-- Software Development -->
+      <div class="skill-card">
+        <h4>Software Development</h4>
+        <div class="pills">
+          <span class="pill">Python</span>
+          <span class="pill">C</span>
+          <span class="pill">C++</span>
+          <span class="pill">Flask</span>
+          <span class="pill">React</span>
+          <span class="pill">Git</span>
+        </div>
+      </div>
 
-    
+      <!-- Systems & Platforms -->
+      <div class="skill-card">
+        <h4>Systems & Platforms</h4>
+        <div class="pills">
+          <span class="pill">Windows</span>
+          <span class="pill">Linux</span>
+          <span class="pill">VMware</span>
+          <span class="pill">VirtualBox</span>
+        </div>
+      </div>
+
+   <!-- Frameworks & Analysis -->
+<div class="skill-card">
+  <h4>Frameworks & Analysis</h4>
+  <div class="pills">
+    <span class="pill">MITRE ATT&CK/D3FEND</span>
+    <span class="pill">NIST CSF</span>
+    <span class="pill">OWASP</span>
   </div>
-</section>
+</div>
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
- <!-- Virtual Internships / Experience Section -->
-<section id="virtual-experience" class="container section virtual-experience" tabindex="0">
-  <h2>Virtual Internships / Experience</h2>
-  <div class="experience-grid">
+  </section>
 
-    <!-- Forage Cyber Job Simulation -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Deloitte - Cyber Job Simulation</h3>
-        <span class="pill">Forage</span>
-      </div>
-      <p>
-        Completed hands-on cybersecurity tasks and simulations in a structured virtual program. 
-        Gained practical experience in threat analysis, cybersecurity fundamentals, and problem-solving within real-world workflow scenarios.
-      </p>
-      <div class="project-links">
-        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_NnnyhmxjXWnnfAx2Q_1757180724568_completion_certificate.pdf" target="_blank" rel="noopener">View Certificate</a>
-      </div>
-    </article>
+  <!-- ====================== CERTIFICATES SECTION ====================== -->
+  <section id="certificates" class="container section certificates" tabindex="0">
+    <h2>Certificates</h2>
+    <div class="certificates-grid">
+      <article class="certificate-card">
+        <h3>CompTIA Security+</h3>
+        <p><em><span class="status in-progress">In Progress</span> — Exam October 2025</em></p>
+      </article>
+      <article class="certificate-card">
+        <h3>EC-Council Certified Ethical Hacker (CEH)</h3>
+        <p><em><span class="status in-progress">In Progress</span> — Exam January 2026</em></p>
+      </article>
+    </div>
+  </section>
 
-    <!-- Virtual Cybersecurity Career Challenge -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>NCyTE - Cybersecurity Career Challenge</h3>
-        <span class="pill">NCyTE</span>
-      </div>
-      <p>
-Designed and implemented a secure network environment for a simulated business. Coordinated team tasks using Kanban, Gantt charts, and Visio diagrams. Conducted vulnerability assessments and defended the network against simulated penetration tests.      </p>
-      <div class="project-links">
-        <a href="assets/VCCC.pdf" target="_blank" rel="noopener">View Certificate</a>
-      </div>
-    </article>
+  <!-- ====================== VIRTUAL INTERNSHIPS / EXPERIENCE ====================== -->
+  <section id="virtual-experience" class="container section virtual-experience" tabindex="0">
+    <h2>Virtual Internships / Experience</h2>
+    <div class="experience-grid">
+      <!-- Deloitte Forage -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Deloitte - Cyber Job Simulation</h3>
+          <span class="pill">Forage</span>
+        </div>
+        <p>
+          Completed hands-on cybersecurity tasks and simulations in a structured virtual program. 
+          Gained practical experience in threat analysis, cybersecurity fundamentals, and problem-solving within real-world workflow scenarios.
+        </p>
+        <div class="project-links">
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_NnnyhmxjXWnnfAx2Q_1757180724568_completion_certificate.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </article>
 
-  </div>
-</section>
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-  <!-- Projects Section -->
+      <!-- NCyTE Challenge -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>NCyTE - Cybersecurity Career Challenge</h3>
+          <span class="pill">NCyTE</span>
+        </div>
+        <p>
+          Designed and implemented a secure network environment for a simulated business. Coordinated team tasks using Kanban, Gantt charts, and Visio diagrams. Conducted vulnerability assessments and defended the network against pentests.
+        </p>
+        <div class="project-links">
+          <a href="assets/VCCC.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- ====================== PROJECTS SECTION ====================== -->
   <section id="projects" class="container section projects" tabindex="0">
     <h2>Projects</h2>
-    
     <div class="project-grid">
+
+      <!-- Threat Intelligence Hub -->
       <article class="project-card">
         <div class="project-header">
           <h3>Threat Intelligence Hub</h3>
           <span class="pill">Web</span>
         </div>
-        <p>Built a full-stack platform to aggregate, manage, and visualize threat intelligence (IOCs, malicious IPs/domains/hashes) using Flask and MongoDB, with secure authentication and real-time data analysis. </p>
+        <p>
+          Built a full-stack platform to aggregate, manage, and visualize threat intelligence using Flask and MongoDB, with real-time data analysis.
+        </p>
         <div class="project-links">
           <a href="https://github.com/Loksharan-soc/Threat-Intelligence-Hub" target="_blank" rel="noopener">Repo</a>
           <a href="https://tihub.onrender.com" class="demo">TIHub.onrender.com</a>
         </div>
       </article>
 
+      <!-- Vulnerability Scanner -->
       <article class="project-card">
         <div class="project-header">
           <h3>Vulnerability Scanner</h3>
           <span class="pill">App</span>
         </div>
-        <p>Python application that performs network and software scans to detect potential security vulnerabilities and matches them against known CVEs, providing results through both a command-line interface and GUI.</p>
+        <p>
+          Python application that performs network and software scans to detect potential security vulnerabilities and matches them against known CVEs.
+        </p>
         <div class="project-links">
           <a href="https://github.com/Loksharan-soc/vulnerability-scanner" target="_blank" rel="noopener">Repo</a>
         </div>
       </article>
 
+      <!-- Encrypted Chat App -->
       <article class="project-card">
         <div class="project-header">
           <h3>Encrypted Chat App</h3>
           <span class="pill">Crypt</span>
         </div>
-        <p>Developed a secure chat application using GTK and OpenSSL, implementing Diffie-Hellman key exchange for end-to-end encrypted messaging, ensuring confidentiality and integrity of communication.</p>
+        <p>
+          Developed a secure chat application using GTK and OpenSSL, implementing Diffie-Hellman key exchange for end-to-end encrypted messaging.
+        </p>
         <div class="project-links">
           <a href="https://github.com/loksharan-soc/secure-chat-app" target="_blank" rel="noopener">Repo</a>
         </div>
       </article>
+
     </div>
   </section>
 
-  
-  
-<!-- Home Lab Section -->
-<section id="homelab" class="container section homelab" tabindex="0">
-  <h2>Cybersecurity Home Lab</h2>
-  <div class="lab-grid">
+  <!-- ====================== CYBERSECURITY HOME LAB ====================== -->
+  <section id="homelab" class="container section homelab" tabindex="0">
+    <h2>Cybersecurity Home Lab</h2>
+    <div class="lab-grid">
 
-    <!-- Offensive Security / Red Team Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Offensive Security</h3>
-        <span class="pill">CEH</span>
-      </div>
-      <p>Performed pentesting and Red Team simulations to exploit vulnerabilities.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/offensive-security-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Offensive Security / Red Team -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Offensive Security</h3>
+          <span class="pill">CEH</span>
+        </div>
+        <p>Performed pentesting and Red Team simulations to exploit vulnerabilities.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/offensive-security-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- SIEM Lab (Wazuh & Splunk) -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Wazuh & Splunk</h3>
-        <span class="pill">SIEM</span>
-      </div>
-      <p>Simulated attacks and detected logs with Wazuh & Splunk dashboard.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/siem-labs" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- SIEM Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Wazuh & Splunk</h3>
+          <span class="pill">SIEM</span>
+        </div>
+        <p>Simulated attacks and detected logs using Wazuh & Splunk dashboards.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/siem-labs" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Threat Intelligence / OSINT Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Threat Intelligence</h3>
-        <span class="pill">OSINT</span>
-      </div>
-      <p>Aggregated and analyzed threat intel, mapped to MITRE ATT&CK.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/threat-intelligence-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Threat Intelligence / OSINT Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Threat Intelligence</h3>
+          <span class="pill">OSINT</span>
+        </div>
+        <p>Aggregated and analyzed threat intelligence, mapped to MITRE ATT&CK framework.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/threat-intelligence-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Velociraptor Threat Hunt -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Velociraptor Threat Hunt</h3>
-        <span class="pill">EDR</span>
-      </div>
-      <p>Hunted suspicious files and system activities using Velociraptor EDR.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/velociraptor-edr-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Velociraptor Threat Hunt -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Velociraptor Threat Hunt</h3>
+          <span class="pill">EDR</span>
+        </div>
+        <p>Hunted suspicious files and system activities using Velociraptor EDR.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/velociraptor-edr-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Vulnerability Assessment Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Vulnerability Assessment</h3>
-        <span class="pill">VULN</span>
-      </div>
-      <p>Scanned systems and analyzed vulnerabilities with Nessus reports.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/vulnerability-assessment-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Vulnerability Assessment Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Vulnerability Assessment</h3>
+          <span class="pill">VULN</span>
+        </div>
+        <p>Scanned systems and analyzed vulnerabilities with Nessus reports.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/vulnerability-assessment-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Malware Analysis Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Malware Analysis</h3>
-        <span class="pill">RE</span>
-      </div>
-      <p>Analyzed malwares using static and dynamic techniques.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/malware-analysis-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Malware Analysis Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Malware Analysis</h3>
+          <span class="pill">RE</span>
+        </div>
+        <p>Analyzed malware using static and dynamic techniques.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/malware-analysis-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Digital Forensics Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Digital Forensics</h3>
-        <span class="pill">DFIR</span>
-      </div>
-      <p>Investigated memory dumps and disk images for malicious activity.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/digital-forensics-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Digital Forensics Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Digital Forensics</h3>
+          <span class="pill">DFIR</span>
+        </div>
+        <p>Investigated memory dumps and disk images for malicious activity.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/digital-forensics-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Network Security Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Network Security</h3>
-        <span class="pill">NET</span>
-      </div>
-      <p>Configured firewall/IDS and monitored network traffic for threats.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/network-security-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Network Security Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Network Security</h3>
+          <span class="pill">NET</span>
+        </div>
+        <p>Configured firewall/IDS and monitored network traffic for threats.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/network-security-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-    <!-- Web Security Lab -->
-    <article class="project-card">
-      <div class="project-header">
-        <h3>Web Security</h3>
-        <span class="pill">WEB</span>
-      </div>
-      <p>Blocked attacks like SQLi/XSS using ModSecurity WAF rules.</p>
-      <div class="project-links">
-        <a href="https://github.com/loksharan-soc/web-security-lab" target="_blank" rel="noopener">Repo</a>
-      </div>
-    </article>
+      <!-- Web Security Lab -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3>Web Security</h3>
+          <span class="pill">WEB</span>
+        </div>
+        <p>Blocked attacks like SQLi/XSS using ModSecurity WAF rules.</p>
+        <div class="project-links">
+          <a href="https://github.com/loksharan-soc/web-security-lab" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
 
-  </div>
-</section>
+    </div>
+  </section>
 
-
-  
-  
-  
-  
-  
-  
-  <!-- Blog Section -->
+  <!-- ====================== BLOG SECTION ====================== -->
   <section id="blog" class="container section blog" tabindex="0">
     <h2>Blog</h2>
     <div class="blog-list">
+
       <article class="blog-post">
-         <h3>Top 5 Essential Tools Every Cybersecurity Intern Should Learn in 2025</h3>
+        <h3>Top 5 Essential Tools Every Cybersecurity Intern Should Learn in 2025</h3>
         <small>August 2025</small>
         <p>Insights on must-know tools like Wazuh, Velociraptor, Splunk, Snort, and pfSense, and hands-on experience with them.</p>
         <a href="blog/essential-tools-blog.html" class="btn-outline">Read More</a>
       </article>
+
       <article class="blog-post">
         <h3>Building a Home Cybersecurity Lab: Tools, Tips, and Best Practices</h3>
         <small>July 2025</small>
         <p>Learn how to design and build a practical home cybersecurity lab from scratch.</p>
         <a href="blog/home-lab.html" class="btn-outline">Read More</a>
       </article>
+
       <article class="blog-post">
-         <h3>Understanding the MITRE ATT&CK Framework: A Guide for Aspiring SOC Analysts</h3>
+        <h3>Understanding the MITRE ATT&CK Framework: A Guide for Aspiring SOC Analysts</h3>
         <small>June 2025</small>
         <p>Learn about the MITRE ATT&CK framework, its importance, and how it integrates with cybersecurity labs.</p>
         <a href="blog/mitre-attack-guide.html" class="btn-outline">Read More</a>
       </article>
+
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ====================== CONTACT SECTION ====================== -->
   <section id="contact" class="container section contact" tabindex="0">
     <h2>Contact</h2>
     <p>If you'd like to connect — email me or view my GitHub and LinkedIn.</p>
@@ -544,14 +468,15 @@ Designed and implemented a secure network environment for a simulated business. 
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ====================== FOOTER ====================== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <small>© 2025 Loksharan Saravanan • Built with HTML, CSS &amp; JS • <a href="assets/resume.pdf">Resume</a></small>
     </div>
   </footer>
 
-  <!-- Link to external JavaScript -->
+  <!-- External JS -->
   <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,6 +1,8 @@
-/* ====== RESET & BASE STYLES ====== */
+/* =========================================
+   RESET & BASE STYLES
+========================================= */
 
-/* Reset margin and padding for all elements and use border-box sizing for predictable layouts */
+/* Reset margin and padding for all elements and use border-box sizing */
 * {
   margin: 0;
   padding: 0;
@@ -9,49 +11,50 @@
 
 /* Base body styles */
 body {
-  background: #0b111f;       /* Dark navy background for good contrast */
-  color: #cfd8dc;            /* Light text color for readability */
-  font-family: 'Inter', sans-serif; /* Modern, clean sans-serif font */
-  line-height: 1.6;          /* Comfortable line spacing */
-  min-height: 100vh;         /* Full viewport height */
-  overflow-x: hidden;        /* Prevent horizontal scroll */
-  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transitions if colors change */
+  background: #0b111f; /* Dark navy background */
+  color: #cfd8dc;      /* Light text */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Container to center content and limit max width */
+/* Container */
 .container {
   max-width: 1100px;
-  margin: 0 auto;            /* Center horizontally */
-  padding: 0 20px;           /* Side padding for breathing room */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Responsive container for header/footer on mobile */
+/* Responsive container for header/footer */
 @media (max-width: 768px) {
   header.nav-wrap .container,
   footer.footer .container {
-    max-width: 100%;         /* Full width on smaller screens */
-    padding: 0 12px;         /* Reduced side padding */
+    max-width: 100%;
+    padding: 0 12px;
     margin: 0;
   }
 }
 
-/* Link base styles */
+/* Links */
 a {
-  color: #4dd0e1;            /* Bright cyan links */
-  text-decoration: none;     /* Remove underline */
-  transition: color 0.3s ease; /* Smooth color change on hover */
+  color: #4dd0e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Link hover/focus states */
 a:hover,
 a:focus {
-  color: #81d4fa;            /* Lighter blue on hover/focus */
-  outline: none;             /* Remove default outline */
+  color: #81d4fa;
+  outline: none;
 }
 
-/* ====== BUTTONS ====== */
+/* =========================================
+   BUTTONS
+========================================= */
 
-/* Base styles shared by all button types */
+/* Shared button styles */
 .btn-primary,
 .btn-outline,
 .btn-ghost {
@@ -63,10 +66,10 @@ a:focus {
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
   text-align: center;
-  border: 2px solid transparent; /* Default no border */
+  border: 2px solid transparent;
 }
 
-/* Primary button: blue background with glow */
+/* Primary button */
 .btn-primary {
   background-color: #0288d1;
   color: #fff;
@@ -82,7 +85,7 @@ a:focus {
   outline: none;
 }
 
-/* Outline button: transparent with blue border */
+/* Outline button */
 .btn-outline {
   background-color: transparent;
   color: #4dd0e1;
@@ -96,7 +99,7 @@ a:focus {
   outline: none;
 }
 
-/* Ghost button: transparent background with subtle blue text */
+/* Ghost button */
 .btn-ghost {
   background-color: transparent;
   color: #81d4fa;
@@ -109,27 +112,29 @@ a:focus {
   outline: none;
 }
 
-/* ====== HEADER & NAVIGATION ====== */
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
 
-/* Header wrapper: dark background with shadow and sticky position */
+/* Header wrapper */
 header.nav-wrap {
   background: #071026;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
   position: sticky;
   top: 0;
-  z-index: 100; /* Stay above other content */
+  z-index: 100;
 }
 
-/* Navigation bar: flex container with spacing */
+/* Navigation bar */
 nav.nav {
   display: flex;
-  justify-content: space-between; /* Brand left, nav links right */
+  justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  flex-wrap: wrap; /* Wrap nav links if needed */
+  flex-wrap: wrap;
 }
 
-/* Brand container: flex to align logo dot and text */
+/* Brand */
 .brand {
   display: flex;
   align-items: center;
@@ -138,7 +143,6 @@ nav.nav {
   color: #4dd0e1;
 }
 
-/* Small colored dot next to brand text */
 .brand .logo-dot {
   height: 14px;
   width: 14px;
@@ -148,7 +152,6 @@ nav.nav {
   box-shadow: 0 0 14px #0288d1;
 }
 
-/* Brand subtitle with smaller font and different color */
 .brand-sub {
   font-size: 0.75rem;
   color: #2ec4b6;
@@ -158,7 +161,7 @@ nav.nav {
   text-transform: uppercase;
 }
 
-/* Navigation links container: flex with spacing */
+/* Navigation links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -166,12 +169,10 @@ nav.nav {
   transition: max-height 0.3s ease;
 }
 
-/* Each nav link item */
 .nav-links li {
   font-weight: 600;
 }
 
-/* Nav link anchors */
 .nav-links li a {
   padding: 6px 10px;
   border-radius: 5px;
@@ -180,7 +181,6 @@ nav.nav {
   display: inline-block;
 }
 
-/* Hover and focus styles for nav links */
 .nav-links li a:hover,
 .nav-links li a:focus {
   background: #026fa3;
@@ -188,9 +188,9 @@ nav.nav {
   outline: none;
 }
 
-/* Hamburger toggle button for mobile - hidden on desktop */
+/* Mobile nav toggle */
 .nav-toggle {
-  display: none; /* Show only on mobile */
+  display: none;
   background: none;
   border: none;
   font-size: 1.8rem;
@@ -206,9 +206,10 @@ nav.nav {
   outline: none;
 }
 
-/* ====== HERO SECTION ====== */
+/* =========================================
+   HERO SECTION
+========================================= */
 
-/* Hero container: flex with wrap, spacing, and vertical center */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -218,27 +219,21 @@ nav.nav {
   color: #d0e9f9;
 }
 
-/* Left side of hero: flexible width */
-.hero-left {
-  flex: 1 1 400px;
-}
+.hero-left { flex: 1 1 400px; }
 
-/* Main hero title */
 .hero-title {
   font-size: 2.8rem;
   margin-bottom: 12px;
   font-weight: 800;
   letter-spacing: 1px;
-  text-shadow: 0 0 4px #2ec4b6;
+  text-shadow: 0 0 0px #2ec4b6;
 }
 
-/* Accent text style */
 .accent {
   color: #2ec4b6;
-  text-shadow: 0 0 8px #2e4b6;
+  text-shadow: 0 0 0px #2e4b6;
 }
 
-/* Hero subtitle */
 .hero-sub {
   font-size: 1.15rem;
   font-weight: 400;
@@ -246,60 +241,54 @@ nav.nav {
   max-width: 600px;
   line-height: 1.4;
   color: #c3d6e1;
-  text-shadow: 0 0 3px #026fa3;
+  text-shadow: 0 0 0px #026fa3;
 }
 
-/* Container for hero call-to-action buttons */
-.hero-cta a {
-  margin-right: 15px;
-}
+.hero-cta a { margin-right: 15px; }
 
-/* Metrics container: flex horizontal row with gap */
 .metrics {
   display: flex;
   gap: 30px;
   margin-top: 30px;
   justify-content: flex-start;
+  flex-wrap: wrap; /* ensures it wraps instead of overflowing */
+
 }
 
-/* Individual metric card with background and glow */
 .metric {
   background: #071026;
   padding: 18px 24px;
   border-radius: 12px;
   box-shadow: 0 0 24px 1px #0288d1;
-
   min-width: 110px;
   text-align: center;
   transition: box-shadow 0.3s ease;
 }
 
-/* Metric number style */
 .metric-value {
   font-size: 1.9rem;
   font-weight: 900;
   color: #2ec4b6;
   margin-bottom: 6px;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 1px #2ec4b6;
+  text-shadow: 0 0 0px #2ec4b6;
 }
 
-/* Metric label style */
 .metric-label {
   font-size: 0.85rem;
   font-weight: 600;
   color: #8fbcc7;
 }
 
-/* Right side hero: flex column for profile card */
 .hero-right {
   flex: 0 1 300px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 100%;
+  flex-shrink: 1;
 }
 
-/* Generic card styles */
 .card {
   background: #071026;
   border-radius: 12px;
@@ -309,17 +298,10 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Card hover glow */
-.card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
+.card:hover { box-shadow: 0 0 40px 6px #2ec4b6; }
 
-/* Profile card text center */
-.profile-card {
-  text-align: center;
-}
+.profile-card { text-align: center; }
 
-/* Avatar image styles */
 .avatar {
   width: 130px;
   height: 130px;
@@ -332,22 +314,15 @@ nav.nav {
   height: auto;
 }
 
-/* Profile heading */
 .profile-card h3 {
   color: #2ec4b6;
   margin-bottom: 4px;
   font-weight: 700;
-  text-shadow: 0 0 6px #2ec4b6;
+  text-shadow: 0 0 0px #2ec4b6;
 }
 
-/* Muted text style */
-.muted {
-  font-size: 0.9rem;
-  color: #6798a6;
-  margin-bottom: 14px;
-}
+.muted { font-size: 0.9rem; color: #6798a6; margin-bottom: 14px; }
 
-/* Badge container for skills */
 .badge-row {
   display: flex;
   justify-content: center;
@@ -355,7 +330,6 @@ nav.nav {
   margin-bottom: 14px;
 }
 
-/* Individual badge styling */
 .badge {
   background: #0288d1;
   color: #d0e9f9;
@@ -366,7 +340,6 @@ nav.nav {
   box-shadow: 0 0 10px #0288d1;
 }
 
-/* Quick links container */
 .quick-links a {
   display: inline-block;
   color: #2ec4b6;
@@ -375,19 +348,14 @@ nav.nav {
   transition: color 0.3s ease;
 }
 
-/* Quick links hover */
-.quick-links a:hover {
-  color: #81d4fa;
-}
+.quick-links a:hover { color: #81d4fa; }
 
-/* ====== ABOUT SECTION ====== */
+/* =========================================
+   ABOUT SECTION
+========================================= */
 
-.section {
-  padding: 60px 0 40px;
-  color: #d0e9f9;
-}
+.section { padding: 60px 0 40px; color: #d0e9f9; }
 
-/* About grid container: flex wrap with gap */
 .about-grid {
   display: flex;
   flex-wrap: wrap;
@@ -395,36 +363,33 @@ nav.nav {
   align-items: center;
 }
 
-/* About text column */
 .about-text {
   flex: 1 1 400px;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* About list styling */
 .about-list {
   list-style: none;
   margin-top: 20px;
   color: #81d4fa;
 }
 
-/* Individual list item */
-.about-list li {
-  margin-bottom: 10px;
-  font-weight: 600;
-}
+.about-list li { margin-bottom: 10px; font-weight: 600; }
 
-/* About stats column: vertical stack */
 .about-stats {
   flex: 1 1 100px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 2rem;
+  margin-left: 200px;
 }
 
-/* Individual stat card */
 .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
   background: #071026;
   border-radius: 14px;
   padding: 18px 24px;
@@ -433,32 +398,50 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Stat value */
 .stat-value {
   font-size: 1.7rem;
   font-weight: 800;
   color: #2ec4b6;
   margin-bottom: 6px;
-  text-shadow: 0 0 6px #2ec4b6;
+  text-shadow: 0 0 0px #2ec4b6;
 }
 
-/* Stat label */
-.stat-label {
-  font-size: 0.9rem;
-  color: #87cfdc;
-  font-weight: 600;
+.stat-label { margin-top: .5rem; font-size: .9rem; color: #4b5563; text-align: center; font-weight: 600; }
+
+.stat-link {
+  color: #374151;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* ====== SKILLS SECTION ====== */
+.stat-link svg { width: 40px; height: 40px; }
 
-/* Skills grid with auto-fit columns */
+.stat-link:hover { transform: translateY(-4px); }
+
+.stat-link.github:hover svg { color: #f3eeee; }
+.stat-link.linkedin:hover svg { color: #0A66C2; }
+.stat-link.gmail:hover svg { color: #D14836; }
+
+/* Mobile About Stats */
+@media (max-width: 768px) {
+  .about-stats {
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0;
+  }
+  .stat { width: auto; }
+}
+
+/* =========================================
+   SKILLS SECTION
+========================================= */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 24px;
 }
 
-/* Individual skill card */
 .skill-card {
   background: #071026;
   padding: 24px;
@@ -469,21 +452,44 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Skill card hover glow */
-.skill-card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
+.skill-card:hover { box-shadow: 0 0 40px 6px #2ec4b6; }
+
+.skill-card h4 { margin-bottom: 12px; font-weight: 700; color: #2ec4b6; }
+
+/* Skill pills inside skill card */
+.skill-card .pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-/* Skill card heading */
-.skill-card h4 {
-  margin-bottom: 12px;
-  font-weight: 700;
-  color: #2ec4b6;
+.skill-card .pill {
+  background-color: #026fa3;
+  color: #ccefff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  cursor: default;
+  user-select: none;
+  box-shadow: 0 0 4px #0288d1;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* ====== CERTIFICATES SECTION ====== */
+.skill-card .pill:hover {
+  background-color: #2ec4b6;
+  transform: translateY(-1px);
+  box-shadow: 0 0 6px #2ec4b6;
+}
 
-/* Certificates grid */
+/* =========================================
+   CERTIFICATES SECTION
+========================================= */
+
 .certificates-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -491,7 +497,6 @@ nav.nav {
   margin-top: 20px;
 }
 
-/* Individual certificate card */
 .certificate-card {
   background: #071026;
   border-radius: 14px;
@@ -501,12 +506,8 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Certificate card hover glow */
-.certificate-card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
+.certificate-card:hover { box-shadow: 0 0 40px 6px #2ec4b6; }
 
-/* Certificate heading */
 .certificate-card h3 {
   color: #2ec4b6;
   font-weight: 700;
@@ -514,22 +515,21 @@ nav.nav {
   font-size: 1.25rem;
 }
 
-/* Certificate description */
 .certificate-card p {
   font-size: 1rem;
   line-height: 1.4;
   color: #d0e9f9;
 }
 
-/* Italic text in certificates */
 .certificate-card p em {
   font-style: italic;
   color: #81d4fa;
 }
 
-/* ====== PROJECTS SECTION ====== */
+/* =========================================
+   PROJECTS SECTION
+========================================= */
 
-/* Projects grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -537,7 +537,6 @@ nav.nav {
   margin-top: 20px;
 }
 
-/* Individual project card */
 .project-card {
   background: #071026;
   border-radius: 14px;
@@ -550,12 +549,8 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Project card hover */
-.project-card:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
+.project-card:hover { box-shadow: 0 0 40px 6px #2ec4b6; }
 
-/* Project header with flex for title and tags */
 .project-header {
   display: flex;
   justify-content: space-between;
@@ -563,14 +558,12 @@ nav.nav {
   margin-bottom: 14px;
 }
 
-/* Project title */
 .project-header h3 {
   color: #2ec4b6;
   font-weight: 700;
-  text-shadow: 0 0 6px #2ec4b6;
+  text-shadow: 0 0 0px #2ec4b6;
 }
 
-/* Pill badge style for project tags */
 .pill {
   background-color: #026fa3;
   padding: 4px 12px;
@@ -582,7 +575,6 @@ nav.nav {
   letter-spacing: 0.05em;
 }
 
-/* Project links */
 .project-links a {
   font-weight: 600;
   color: #81d4fa;
@@ -591,19 +583,14 @@ nav.nav {
   transition: color 0.3s ease;
 }
 
-/* Project links hover */
-.project-links a:hover {
-  color: #2ec4b6;
-}
+.project-links a:hover { color: #2ec4b6; }
 
-/* Demo link style (italic) */
-.project-links a.demo {
-  font-style: italic;
-}
+.project-links a.demo { font-style: italic; }
 
-/* ====== BLOG SECTION ====== */
+/* =========================================
+   BLOG SECTION
+========================================= */
 
-/* Blog posts grid */
 .blog-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -611,7 +598,6 @@ nav.nav {
   margin-top: 20px;
 }
 
-/* Individual blog post */
 .blog-post {
   background: #071026;
   padding: 20px;
@@ -621,19 +607,14 @@ nav.nav {
   transition: box-shadow 0.3s ease;
 }
 
-/* Blog post hover glow */
-.blog-post:hover {
-  box-shadow: 0 0 40px 6px #2ec4b6;
-}
+.blog-post:hover { box-shadow: 0 0 40px 6px #2ec4b6; }
 
-/* Blog post title */
 .blog-post h3 {
   color: #2ec4b6;
   margin-bottom: 8px;
-  text-shadow: 0 0 6px #2ec4b6;
+  text-shadow: 0 0 0px #2ec4b6;
 }
 
-/* Blog post date */
 .blog-post small {
   display: block;
   margin-bottom: 12px;
@@ -641,13 +622,8 @@ nav.nav {
   font-size: 0.85rem;
 }
 
-/* Blog post excerpt */
-.blog-post p {
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
+.blog-post p { margin-bottom: 16px; line-height: 1.4; }
 
-/* Blog read more link */
 .blog-post a {
   font-weight: 600;
   color: #81d4fa;
@@ -666,9 +642,10 @@ nav.nav {
   outline: none;
 }
 
-/* ====== CONTACT SECTION ====== */
+/* =========================================
+   CONTACT SECTION
+========================================= */
 
-/* Contact container */
 .contact-row {
   display: flex;
   flex-wrap: wrap;
@@ -677,7 +654,6 @@ nav.nav {
   justify-content: flex-start;
 }
 
-/* Contact card links */
 .contact-card {
   flex: 1 1 120px;
   background: #071026;
@@ -699,7 +675,9 @@ nav.nav {
   outline: none;
 }
 
-/* ====== FOOTER ====== */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer.footer {
   padding: 24px 0;
@@ -711,7 +689,6 @@ footer.footer {
   user-select: none;
 }
 
-/* Footer links */
 footer.footer a {
   color: #81d4fa;
   text-decoration: none;
@@ -724,13 +701,12 @@ footer.footer a:focus {
   outline: none;
 }
 
-/* ====== RESPONSIVE MOBILE NAVIGATION ====== */
+/* =========================================
+   RESPONSIVE MOBILE NAVIGATION
+========================================= */
 
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    margin-left: auto;
-  }
+  .nav-toggle { display: block; margin-left: auto; }
 
   .nav-links {
     width: 100%;
@@ -742,9 +718,7 @@ footer.footer a:focus {
     transition: max-height 0.3s ease-in-out;
   }
 
-  .nav-links.active {
-    max-height: 500px;
-  }
+  .nav-links.active { max-height: 500px; }
 
   .nav-links li {
     margin: 12px 0;
@@ -763,89 +737,61 @@ footer.footer a:focus {
     width: 100%;
   }
 
-  .brand {
-    margin-bottom: 0;
-  }
+  .brand { margin-bottom: 0; }
 
-  .hero {
-    flex-direction: column;
-    padding: 30px 0;
-  }
+  .hero { flex-direction: column; padding: 30px 0; }
 
   .hero-left,
-  .hero-right {
-    flex: 1 1 100%;
-  }
+  .hero-right { flex: 1 1 100%; }
 
-  .metrics {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 24px;
-  }
+  .metrics { /*flex-direction: column; */ gap: 12px; margin-top: 24px; }
 
-  .contact-card {
-    flex: 1 1 100%;
-  }
+  .contact-card { flex: 1 1 100%; }
 }
 
-/* Home Lab Section */
-.lab-grid {
+/* =========================================
+   HOME LAB & EXPERIENCE
+========================================= */
+
+.lab-grid,
+.experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
   margin-top: 20px;
 }
 
-/* ====== PROFESSIONAL STATUS TEXT ====== */
+/* =========================================
+   PROFESSIONAL STATUS TEXT
+========================================= */
+
 .status.completed {
-  color: #4caf50; /* green */
-  text-shadow: 0 0 3px rgba(76, 175, 80, 0.6); /* subtle soft glow */
+  color: #4caf50;
+  text-shadow: 0 0 2px rgba(76, 175, 80, 0.6);
   font-weight: 600;
 }
 
 .status.in-progress {
-  color: #b36b00; /* brown/orange */
-  text-shadow: 0 0 3px rgba(179, 107, 0, 0.6); /* subtle soft glow */
+  color: #b36b00;
+  text-shadow: 0 0 3px rgba(179, 107, 0, 0.6);
   font-weight: 600;
 }
 
+/* =========================================
+   BADGE BASE / EMBEDS
+========================================= */
 
-
-
-
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* space between cards */
-}
-
-
-
-
-
-
-
-/* Make profile card flexible */
-.hero-right {
-  max-width: 100%;
-  flex-shrink: 1;
-}
-
-/* Ensure the badge container adapts */
 .badge-base {
   width: 100% !important;
-  min-width: 200px; /* optional */
+  min-width: 200px;
   box-sizing: border-box;
 }
 
-/* Optional: smaller badge for mobile */
 @media (max-width: 480px) {
   .badge-base {
     max-width: 250px;
   }
 
-  /* Adjust iframe inside the badge */
   .badge-base iframe {
     width: 100% !important;
     min-width: 200px;
